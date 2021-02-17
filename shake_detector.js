@@ -32,9 +32,8 @@ AFRAME.registerComponent('shake_detector', {
       y: this.actualPos.y - this.lastPos.y,
       z: this.actualPos.z - this.lastPos.z
     }
-    //Direction switch happen in x
-    let axis = ['x', 'y', 'z']
-    axis.forEach(function (elem) {
+    //Direction switch happen in different axis
+    ['x', 'y', 'z'].forEach(function (elem) {
         if((this.actualDirection[elem] * this.lastDirection[elem]) < 0 ){
           let time_between_switch = time - this.switch.lastSwitchTime[elem];
 
