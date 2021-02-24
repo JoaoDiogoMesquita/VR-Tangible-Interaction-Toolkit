@@ -71,10 +71,10 @@ AFRAME.registerComponent('shake_detector', {
 
       if(this.switch.switchCount[elem] > this.data.minimumSwitchTimes) {
 
-        if (this.data.event_targets != []) {
+        let event_str = 'shake_event_' + [elem];
+        this.el.emit(event_str);
 
-          let event_str = 'shake_event_' + [elem];
-          this.el.emit(event_str)
+        if (this.data.event_targets != []) {
 
           this.data.event_targets.forEach(element => {
             if (element != null) {
