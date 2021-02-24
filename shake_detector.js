@@ -2,12 +2,14 @@ AFRAME.registerComponent('shake_detector', {
   schema: {
     switch_interval : {type: 'int', default: 1000},
     minimumSwitchTimes : {type: 'int', default: 3},
-    minimumDistance : {type: 'float', default: 1.0},
-    event_targets: {type: 'array', default: []}
+    minimumDistance : {type: 'float', default: 0.5},
+    event_targets: {type: 'selectorAll'},
+    axis : {type: 'array', default: ['x', 'y', 'z']}
   },
 
 
   init: function (){
+    console.log("Initializing shake_detector")
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();
@@ -32,13 +34,14 @@ AFRAME.registerComponent('shake_detector', {
       y: this.actualPos.y - this.lastPos.y,
       z: this.actualPos.z - this.lastPos.z
     }
-    //Direction switch happen in different axis
-    ['x', 'y', 'z'].forEach(function (elem) {
+    //Direction switch happened
+
+    this.data.axis.forEach(function (elem) {
         if((this.actualDirection[elem] * this.lastDirection[elem]) < 0 ){
           let time_between_switch = time - this.switch.lastSwitchTime[elem];
 
           if(Math.abs(this.movementDistance[elem]) > this.data.minimumDistance ){
-             //console.log('Distance OK => ', Math.abs(this.movementDistance[elem]),  ' > ', this.minimumDistance)
+             //console.log('Distance OK in ' ,[elem],' => ', Math.abs(this.movementDistance[elem]),  ' > ', this.minimumDistance)
 
             //To limit movements that take a long time
             if(time_between_switch  < this.data.switch_interval){
@@ -63,19 +66,30 @@ AFRAME.registerComponent('shake_detector', {
         else{
           this.movementDistance[elem] += this.actualDirection[elem];
         }
+
+
+
+      if(this.switch.switchCount[elem] > this.data.minimumSwitchTimes) {
+
+        if (this.data.event_targets != []) {
+
+          let event_str = 'shake_event_' + [elem];
+          this.el.emit(event_str)
+
+          this.data.event_targets.forEach(element => {
+            if (element != null) {
+              console.debug('Emitting event ', [elem], ' to:<', element, '>');
+              element.emit(event_str);
+            }
+          });
+        }
+
+        //Restart counters
+        this.switch.lastSwitchTime[elem] = 0;
+        this.switch.switchCount[elem] = 0;
+        this.movementDistance[elem] = 0;
+      }
       }.bind(this)
     );
-
-    if(this.switch.switchCount.x > this.data.minimumSwitchTimes || this.switch.switchCount.y > this.data.minimumSwitchTimes || this.switch.switchCount.z > this.data.minimumSwitchTimes){
-      this.data.event_targets.forEach(element =>{
-      let elem = document.getElementById(element);
-      if(elem != null) {
-        console.debug('Emitting event to:<', element,'>');
-        elem.emit('shake_event');
-      }});
-      this.switch = {lastSwitchTime : {x: time, y: time, z: time}, switchCount : new THREE.Vector3() }
-      this.movementDistance =  new THREE.Vector3();
-    }
   },
-
 });
