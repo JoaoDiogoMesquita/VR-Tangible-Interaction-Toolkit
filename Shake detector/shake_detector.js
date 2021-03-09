@@ -1,15 +1,17 @@
-AFRAME.registerComponent('shake_detector', {
+// a norma para os nomes dos componentes parece ser usar '-', e.g., https://github.com/aframevr/aframe/blob/master/src/components/gltf-model.js
+AFRAME.registerComponent('shake-detector', {
   schema: {
-    switch_interval : {type: 'int', default: 1000},
+    // a norma no A-Frame parece ser camelCase para o schema, e.g. https://github.com/aframevr/aframe/blob/master/src/components/cursor.js
+    switchInterval : {type: 'int', default: 1000},
     minimumSwitchTimes : {type: 'int', default: 3},
     minimumDistance : {type: 'float', default: 0.5},
-    event_targets: {type: 'selectorAll'},
+    eventTargets: {type: 'selectorAll'},
     axis : {type: 'array', default: ['x', 'y', 'z']}
   },
 
 
   init: function (){
-    console.log("Initializing shake_detector")
+    console.log("Initializing shake-detector")
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();
@@ -44,7 +46,7 @@ AFRAME.registerComponent('shake_detector', {
              //console.log('Distance OK in ' ,[elem],' => ', Math.abs(this.movementDistance[elem]),  ' > ', this.minimumDistance)
 
             //To limit movements that take a long time
-            if(time_between_switch  < this.data.switch_interval){
+            if(time_between_switch  < this.data.switchInterval){
               //  console.log('Time OK', time_between_switch)
               this.switch.switchCount[elem] += 1;
               this.movementDistance[elem] = 0;
@@ -72,16 +74,27 @@ AFRAME.registerComponent('shake_detector', {
       if(this.switch.switchCount[elem] > this.data.minimumSwitchTimes) {
 
         let event_str = 'shake_event_' + [elem];
-        this.el.emit(event_str);
 
-        if (this.data.event_targets != []) {
 
-          this.data.event_targets.forEach(element => {
-            if (element != null) {
-              console.debug('Emitting event ', [elem], ' to:<', element, '>');
-              element.emit(event_str);
+        if (this.data.eventTargets != []) {
+          this.data.eventTargets.forEach(target => {
+            if (target != null) {
+              console.debug('Emitting event ', [elem], ' to: <', target, '>');
+              // send axis event
+              target.emit(event_str);
+
+              // send generic event
+              target.emit('shake_event');
             }
           });
+        } else {
+          console.debug('Emitting event  to: <', this.el, '>');
+          // Default behaviour is sending the event to the entity that holds the component
+          // send axis event
+          this.el.emit(event_str);
+
+          // send generic event
+          target.emit('shake_event');
         }
 
         //Restart counters
