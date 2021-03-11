@@ -1,8 +1,8 @@
-AFRAME.registerComponent('angle-bind', {
+AFRAME.registerComponent('angle_bind', {
   schema: {
-    threshold : {type: 'float', default: 20}, //threshold parece um nome mais adequado, valor deve ser em graus
-    targets: {type: 'selectorAll'}, // no component shake este parametro chama-se eventTargets: uniformizar
-    axes : {type: 'array', default: ['x','y','z']}, // no component shake, este parametro chama-se axis: uniformizar
+    range : {type: 'float', default: 2},
+    targets: {type: 'selectorAll'},
+    axes : {type: 'array', default: ['x','y','z']},
   },
 
   init: function () {
@@ -44,7 +44,7 @@ AFRAME.registerComponent('angle-bind', {
       }
 
       //Is the saved angle high enough?
-      if(Math.abs(this.savedAngle[axis]) >= THREE.Math.degToRad(this.data.threshold)) {
+      if(Math.abs(this.savedAngle[axis]) >= this.data.range) {
 
         //Check if the rotation is positive or negative and name event
         let event_str = 'rotation_event_' + axis
@@ -55,13 +55,13 @@ AFRAME.registerComponent('angle-bind', {
         }
 
         // Restart saved angle variable
-        this.savedAngle[axis] = this.savedAngle[axis] % THREE.Math.degToRad(this.data.threshold);
+        this.savedAngle[axis] = this.savedAngle[axis] % this.data.range;
 
         //Emit events to this object and targets
         this.el.emit(event_str)
         this.data.targets.forEach(function (target) {
           if (target != null) {
-            console.debug('Emitting event: Rotation of', THREE.Math.degToRad(this.data.threshold), 'radians in ', axis, ' to:<', target, '>');
+            console.debug('Emitting event: Rotation of', this.data.range, 'radians in ', axis, ' to:<', target, '>');
             target.emit(event_str);
           }
         }.bind(this))
