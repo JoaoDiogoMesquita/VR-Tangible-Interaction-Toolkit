@@ -6,7 +6,7 @@
 </script>
 <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js">
 </script>
-<script src="js/shake_detector.js">
+<script src="shake_detector.js">
 </script>
 
 <body>
@@ -15,7 +15,7 @@
 
   <a-sky></a-sky>
   <a-camera>
-    <a-marker preset = 'hiro'  shake_detector="event_targets: #my1,#my2; axis:y ">
+    <a-marker preset = 'hiro'  shake-detector="eventTargets: #my1,#my2; axis:y ">
       <a-box id="my1" event-set__shake_event_x="color:red"></a-box>
     </a-marker>
     <a-box position="0 0 -10" id="my2" event-set__shake_event_y="color:yellow; position: 0 0 -5"></a-box>
