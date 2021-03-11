@@ -1,15 +1,15 @@
-AFRAME.registerComponent('shake_detector', {
+AFRAME.registerComponent('shake-detector', {
   schema: {
-    switch_interval : {type: 'int', default: 1000},
+    switchInterval : {type: 'int', default: 1000},
     minimumSwitchTimes : {type: 'int', default: 3},
     minimumDistance : {type: 'float', default: 0.5},
-    event_targets: {type: 'selectorAll'},
+    eventTargets: {type: 'selectorAll'},
     axis : {type: 'array', default: ['x', 'y', 'z']}
   },
 
 
   init: function (){
-    console.log("Initializing shake_detector")
+    console.log("Initializing shake-detector")
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();
@@ -22,30 +22,24 @@ AFRAME.registerComponent('shake_detector', {
   tick: function (time) {
     //Update direction and positon variables
 
-    this.lastPos = Object.assign({}, this.actualPos);
-    this.actualPos = {
-      x: this.el.object3D.position.x,
-      y: this.el.object3D.position.y,
-      z: this.el.object3D.position.z
-    }
-    this.lastDirection = Object.assign({}, this.actualDirection);
-    this.actualDirection = {
-      x: this.actualPos.x - this.lastPos.x,
-      y: this.actualPos.y - this.lastPos.y,
-      z: this.actualPos.z - this.lastPos.z
-    }
-    //Direction switch happened
+    this.lastPos.copy(this.actualPos);
+    this.actualPos = { x: this.el.object3D.position.x, y: this.el.object3D.position.y, z: this.el.object3D.position.z }
+
+    this.lastDirection.copy(this.actualDirection);
+    this.actualDirection = { x: this.actualPos.x - this.lastPos.x, y: this.actualPos.y - this.lastPos.y, z: this.actualPos.z - this.lastPos.z }
+
 
     this.data.axis.forEach(function (elem) {
+        //Direction switch happened
         if((this.actualDirection[elem] * this.lastDirection[elem]) < 0 ){
-          let time_between_switch = time - this.switch.lastSwitchTime[elem];
+          let timeBetweenSwitch = time - this.switch.lastSwitchTime[elem];
 
           if(Math.abs(this.movementDistance[elem]) > this.data.minimumDistance ){
-             //console.log('Distance OK in ' ,[elem],' => ', Math.abs(this.movementDistance[elem]),  ' > ', this.minimumDistance)
+            console.log('Distance OK in ' ,[elem],' => ', Math.abs(this.movementDistance[elem]),  ' > ', this.minimumDistance)
 
             //To limit movements that take a long time
-            if(time_between_switch  < this.data.switch_interval){
-              //  console.log('Time OK', time_between_switch)
+            if(timeBetweenSwitch  < this.data.switchInterval){
+                console.log('Time OK', timeBetweenSwitch)
               this.switch.switchCount[elem] += 1;
               this.movementDistance[elem] = 0;
             }
@@ -53,7 +47,7 @@ AFRAME.registerComponent('shake_detector', {
             else{
               this.movementDistance[elem] = 0;
               this.switch.switchCount[elem] = 0;
-              //  console.log('Too much time: ' , time_between_switch)
+                console.log('Too much time: ' , timeBetweenSwitch)
             }
             //Record when the movement started to verify the time frame later in the next switch
             this.switch.lastSwitchTime[elem] = time;
@@ -69,26 +63,37 @@ AFRAME.registerComponent('shake_detector', {
 
 
 
-      if(this.switch.switchCount[elem] > this.data.minimumSwitchTimes) {
+        if(this.switch.switchCount[elem] > this.data.minimumSwitchTimes) {
 
-        let event_str = 'shake_event_' + [elem];
-        this.el.emit(event_str);
+          let eventString = 'shake_event_' + [elem];
 
-        if (this.data.event_targets != []) {
 
-          this.data.event_targets.forEach(element => {
-            if (element != null) {
-              console.debug('Emitting event ', [elem], ' to:<', element, '>');
-              element.emit(event_str);
-            }
-          });
+          if (this.data.eventTargets != []) {
+            this.data.eventTargets.forEach(target => {
+              if (target != null) {
+                console.debug('Emitting event ', [elem], ' to: <', target, '>');
+                // send axis event
+                target.emit(eventString);
+
+                // send generic event
+                target.emit('shake_event');
+              }
+            });
+          } else {
+            console.debug('Emitting event  to: <', this.el, '>');
+            // Default behaviour is sending the event to the entity that holds the component
+            // send axis event
+            this.el.emit(eventString);
+
+            // send generic event
+            target.emit('shake_event');
+          }
+
+          //Restart counters
+          this.switch.lastSwitchTime[elem] = 0;
+          this.switch.switchCount[elem] = 0;
+          this.movementDistance[elem] = 0;
         }
-
-        //Restart counters
-        this.switch.lastSwitchTime[elem] = 0;
-        this.switch.switchCount[elem] = 0;
-        this.movementDistance[elem] = 0;
-      }
       }.bind(this)
     );
   },

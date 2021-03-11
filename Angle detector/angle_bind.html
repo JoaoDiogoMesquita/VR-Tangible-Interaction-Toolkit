@@ -15,13 +15,13 @@
 
   <a-box id='box1' position="-1 0 -10" rotation="0 0 0" color="blue"
          animation="property: rotation;  to: 0 0 90 ; dur : 1000; "
-         angle-bind="threshold:1; targets: #box2; axes:z">
+         angle_bind="range:1; targets: #box2; axes:z">
   </a-box>
 
 
   <a-box id='box2' position="1 0 -10" rotation="0 0 0" color="blue"
          animation="property: rotation;  to: 0 0 -90 ; dur : 1000; "
-         angle-bind="threshold:1; targets: #box1; axes:z">
+         angle_bind="range:1; targets: #box1; axes:z">
   </a-box>
 
 
