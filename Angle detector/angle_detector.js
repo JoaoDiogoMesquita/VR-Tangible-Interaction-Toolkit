@@ -1,8 +1,8 @@
-AFRAME.registerComponent('angle_bind', {
+AFRAME.registerComponent('angle-detector', {
   schema: {
-    range : {type: 'float', default: 2},
+    threshold : {type: 'float', default: 20},
     targets: {type: 'selectorAll'},
-    axes : {type: 'array', default: ['x','y','z']},
+    axis : {type: 'array', default: ['x','y','z']},
   },
 
   init: function () {
@@ -37,37 +37,37 @@ AFRAME.registerComponent('angle_bind', {
     this.inputAngle.z = this.actualAngle.z - this.lastAngle.z
 
     //Process nly in the selected axes for optimal perfomance
-    this.data.axes.forEach(function (axis){
-      if(this.inputAngle[axis] != 0) {
-        this.savedAngle[axis] += this.inputAngle[axis];
-        //console.log(axis , ' ->' , 'actual: ', this.actualAngle[axis], ' input: ',this.inputAngle[axis], 'saved: ',this.savedAngle[axis])
-      }
-
-      //Is the saved angle high enough?
-      if(Math.abs(this.savedAngle[axis]) >= this.data.range) {
-
-        //Check if the rotation is positive or negative and name event
-        let event_str = 'rotation_event_' + axis
-        if (this.savedAngle[axis] > 0 ) {
-          event_str += '_pos';
-        } else {
-          event_str += '_neg';
+    this.data.axis.forEach(function (axis){
+        if(this.inputAngle[axis] != 0) {
+          this.savedAngle[axis] += this.inputAngle[axis];
+          //console.log(axis , ' ->' , 'actual: ', this.actualAngle[axis], ' input: ',this.inputAngle[axis], 'saved: ',this.savedAngle[axis])
         }
 
-        // Restart saved angle variable
-        this.savedAngle[axis] = this.savedAngle[axis] % this.data.range;
+        //Is the saved angle high enough?
+        if(Math.abs(this.savedAngle[axis]) >= THREE.Math.degToRad(this.data.threshold)) {
 
-        //Emit events to this object and targets
-        this.el.emit(event_str)
-        this.data.targets.forEach(function (target) {
-          if (target != null) {
-            console.debug('Emitting event: Rotation of', this.data.range, 'radians in ', axis, ' to:<', target, '>');
-            target.emit(event_str);
+          //Check if the rotation is positive or negative and name event
+          let event_str = 'rotation_event_' + axis
+          if (this.savedAngle[axis] > 0 ) {
+            event_str += '_pos';
+          } else {
+            event_str += '_neg';
           }
-        }.bind(this))
 
-      }
-    }.bind(this)
+          // Restart saved angle variable
+          this.savedAngle[axis] = this.savedAngle[axis] % THREE.Math.degToRad(this.data.threshold);
+
+          //Emit events to this object and targets
+          this.el.emit(event_str)
+          this.data.targets.forEach(function (target) {
+            if (target != null) {
+              console.debug('Emitting event: Rotation of', this.data.threshold, 'degrees (',THREE.Math.degToRad(this.data.threshold), ' rad) in ', axis, ' to:<', target, '>');
+              target.emit(event_str);
+            }
+          }.bind(this))
+
+        }
+      }.bind(this)
     )
   }
 
