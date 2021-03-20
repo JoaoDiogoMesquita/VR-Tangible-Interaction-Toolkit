@@ -6,6 +6,7 @@ AFRAME.registerComponent('angle-detector', {
   },
 
   init: function () {
+    console.log("Initializing Angle-detector")
     this.firstIteration = true;
     this.lastAngle = new THREE.Vector3();
     this.actualAngle= new THREE.Vector3();
