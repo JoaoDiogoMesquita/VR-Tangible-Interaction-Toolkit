@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Button Component- Example 1</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="../button.js"></script>
+</head>
+
+
+<body>
+  <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+    <a-camera>
+
+      <a-marker id = 'ref' preset='kanji'>
+        <a-sphere color="red" radius="0.5"></a-sphere>
+      </a-marker>
+
+      <a-marker preset='hiro'  button = "referenceMarker: #ref ; targets: #box;">
+        <a-sphere color="yellow" radius="0.5"></a-sphere>
+      </a-marker>
+
+    </a-camera>
+
+    <a-box id='box'
+           position="3 0 -10"
+           color="red"
+           event-set__event_button_pressed="color:green">
+    </a-box>
+
+
+  </a-scene>
+  </body>
+
+</html>
+
+
