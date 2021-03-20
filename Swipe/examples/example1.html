@@ -5,7 +5,7 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
-    <script src="swipe.js"></script>
+    <script src="../swipe.js"></script>
 </head>
 
 <body>
@@ -13,11 +13,11 @@
 
     <a-camera>
 
-        <a-marker preset="hiro" value="1"  swipe = "middleMarker:#my2; sideMarker2:#my3; sideMarker1:#my1; ">
+        <a-marker preset="hiro"  swipe = "markers:#my1,#my2,#my3; sequences:1 2 3,3 2 1,6 7 2; maximumTime: 3000; hasReference: True">
             <a-box id="reference" color="green" ></a-box>
         </a-marker>
 
-        <a-marker id="my1" type="barcode" value="1" >
+        <a-marker id="my1" type="barcode" value="1"  >
             <a-box  color="blue" ></a-box>
         </a-marker>
 
@@ -26,6 +26,17 @@
         </a-marker>
 
         <a-marker id="my3" type="barcode" value="3" >
+            <a-box  color="yellow" ></a-box>
+        </a-marker>
+        <a-marker id="my4" type="barcode" value="4" >
+            <a-box  color="blue" ></a-box>
+        </a-marker>
+
+        <a-marker id="my5" type="barcode" value="5" >
+            <a-box color="red" ></a-box>
+        </a-marker>
+
+        <a-marker id="my6" type="barcode" value="6" >
             <a-box  color="yellow" ></a-box>
         </a-marker>
 
