@@ -4,11 +4,12 @@ AFRAME.registerComponent('swipe', {
         markers : {type: 'selectorAll'},
         sequences : {type: 'string'},
         maximumTime : {type : 'int', default: 10000},
-        hasReference : {type: 'boolean', default: true}
+        hasReference : {type: 'boolean', default: true},
+        debug : {type: 'boolean', default: false}
     },
 
     init: function () {
-        console.log("Initializing Swipe-detector\n")
+        console.log("INITIALIZING SWIPE-DETECTOR COMPONENT\n")
         this.maximumTime= this.data.maximumTime;
         this.hasReference = this.data.hasReference;
         this.sequences = []
@@ -27,9 +28,8 @@ AFRAME.registerComponent('swipe', {
             this.sequences.push(aux[i].split(' '))
         }
 
-        console.log('MARKERS: ', this.markers)
-
-        console.log('SEQUENCES: ', this.sequences)
+        console.log('MARKERS --> ', this.markers)
+        console.log('SEQUENCES --> ', this.sequences)
 
     },
 
@@ -48,18 +48,20 @@ AFRAME.registerComponent('swipe', {
                     var newCovered = {id: elem.id , time: time}
                     this.covered.push(newCovered)
                     this.lastCovered = newCovered
-                    console.log(this.covered)
+                    if(this.data.debug)
+                        console.log(this.covered)
                 }
             }.bind(this))
 
             //Filter covered structure by time passed, given the maximum time
             this.covered = this.covered.filter(item => this.maximumTime > time - item.time)
+            if(this.data.debug)
+                console.log('Covered after filter --> ', this.covered)
 
-
-            //Test if a sequence was done
-            var sequenceOrder = 0;
+                //Test if a sequence was done
+            var sequenceIndex = 0;
             this.sequences.forEach(function(sequence){
-                sequenceOrder++;
+                sequenceIndex++;
                 var firstIndex = this.covered.findIndex(item => item.id == sequence[0])
                 var match = undefined;
                 var elemIndex = firstIndex;
@@ -67,9 +69,7 @@ AFRAME.registerComponent('swipe', {
                 if(elemIndex != -1) {
                     match = true;
                     for (var i = 1; i < sequence.length; i++) {
-
                         elemIndex++
-
                         if(this.covered[elemIndex] != null && this.covered[elemIndex].id == sequence[i]){
                             match = true
                         }
@@ -79,9 +79,10 @@ AFRAME.registerComponent('swipe', {
                     }
 
                     if(match == true ){
-                        console.log('event_swipe_sequence_' + sequenceOrder)
+                        if(this.data.debug)
+                            console.log('event_swipe_sequence_' + sequenceIndex)
                         this.covered.splice(firstIndex , sequence.length)
-                        this.el.emit('event_swipe_sequence_' + sequenceOrder)
+                        this.el.emit('event_swipe_sequence_' + sequenceIndex)
                     }
                 }
             }.bind(this))

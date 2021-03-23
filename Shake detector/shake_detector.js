@@ -4,12 +4,13 @@ AFRAME.registerComponent('shake-detector', {
     minimumSwitchTimes : {type: 'int', default: 3},
     minimumDistance : {type: 'float', default: 0.5},
     eventTargets: {type: 'selectorAll'},
-    axis : {type: 'array', default: ['x', 'y', 'z']}
+    axis : {type: 'array', default: ['x', 'y', 'z']},
+    debug : {type: 'boolean', default: false}
   },
 
 
   init: function (){
-    console.log("Initializing shake-detector")
+    console.log("INITIALIZING SHAKE-DETECTOR COMPONENT")
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();
@@ -35,10 +36,12 @@ AFRAME.registerComponent('shake-detector', {
           let timeBetweenSwitch = time - this.switch.lastSwitchTime[elem];
 
           if(Math.abs(this.movementDistance[elem]) > this.data.minimumDistance ){
-            console.log('Distance OK in ' ,[elem],' => ', Math.abs(this.movementDistance[elem]),  ' > ', this.minimumDistance)
+            if(this.data.debug)
+              console.log('Distance OK in ' ,[elem],' => ', Math.abs(this.movementDistance[elem]),  ' > ', this.minimumDistance)
 
             //To limit movements that take a long time
             if(timeBetweenSwitch  < this.data.switchInterval){
+              if(this.data.debug)
                 console.log('Time OK', timeBetweenSwitch)
               this.switch.switchCount[elem] += 1;
               this.movementDistance[elem] = 0;
@@ -47,13 +50,15 @@ AFRAME.registerComponent('shake-detector', {
             else{
               this.movementDistance[elem] = 0;
               this.switch.switchCount[elem] = 0;
+              if(this.data.debug)
                 console.log('Too much time: ' , timeBetweenSwitch)
             }
             //Record when the movement started to verify the time frame later in the next switch
             this.switch.lastSwitchTime[elem] = time;
           }
           else{
-            // console.log('Distance OK => ', Math.abs(this.movementDistance[elem]),  ' < ', this.minimumDistance)
+            if(this.data.debug)
+              console.log('Distance OK => ', Math.abs(this.movementDistance[elem]),  ' < ', this.minimumDistance)
           }
         }
         //If direction still the same just increment variable

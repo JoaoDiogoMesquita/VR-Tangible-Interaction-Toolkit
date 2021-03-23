@@ -3,10 +3,11 @@ AFRAME.registerComponent('angle-detector', {
     threshold : {type: 'float', default: 20},
     targets: {type: 'selectorAll'},
     axis : {type: 'array', default: ['x','y','z']},
+    debug : {type: 'boolean', default: false}
   },
 
   init: function () {
-    console.log("Initializing Angle-detector")
+    console.log("INITIALIZING ANGLE-DETECTOR COMPONENT")
     this.firstIteration = true;
     this.lastAngle = new THREE.Vector3();
     this.actualAngle= new THREE.Vector3();
@@ -41,7 +42,8 @@ AFRAME.registerComponent('angle-detector', {
     this.data.axis.forEach(function (axis){
         if(this.inputAngle[axis] != 0) {
           this.savedAngle[axis] += this.inputAngle[axis];
-          //console.log(axis , ' ->' , 'actual: ', this.actualAngle[axis], ' input: ',this.inputAngle[axis], 'saved: ',this.savedAngle[axis])
+          if(this.data.debug)
+            console.log(axis , ' ->' , 'ACTUAL: ', this.actualAngle[axis], ' INPUT: ',this.inputAngle[axis], 'SAVED: ',this.savedAngle[axis])
         }
 
         //Is the saved angle high enough?
@@ -61,9 +63,13 @@ AFRAME.registerComponent('angle-detector', {
           //Emit events to this object and targets
           this.el.emit(event_str)
           this.data.targets.forEach(function (target) {
+
             if (target != null) {
-              console.debug('Emitting event: Rotation of', this.data.threshold, 'degrees (',THREE.Math.degToRad(this.data.threshold), ' rad) in ', axis, ' to:<', target, '>');
               target.emit(event_str);
+
+              if(this.data.debug)
+                console.log('Emitting event: Rotation of', this.data.threshold, 'degrees (',THREE.Math.degToRad(this.data.threshold), ' rad) in ', axis, ' to:<', target, '>');
+
             }
           }.bind(this))
 
