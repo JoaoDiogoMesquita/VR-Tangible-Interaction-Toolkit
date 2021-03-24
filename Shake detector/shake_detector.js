@@ -42,7 +42,7 @@ AFRAME.registerComponent('shake-detector', {
             //To limit movements that take a long time
             if(timeBetweenSwitch  < this.data.switchInterval){
               if(this.data.debug)
-                console.log('Time OK', timeBetweenSwitch)
+                console.log('Time between switch ok:', timeBetweenSwitch)
               this.switch.switchCount[elem] += 1;
               this.movementDistance[elem] = 0;
             }

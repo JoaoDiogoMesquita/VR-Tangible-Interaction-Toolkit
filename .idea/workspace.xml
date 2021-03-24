@@ -20,7 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e2de942-afd6-4bff-987c-d507bbc063ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/examples/example1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Button/examples/example1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shake detector/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shake detector/shake_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/shake_detector.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +76,7 @@
       <workItem from="1616418195028" duration="592000" />
       <workItem from="1616437869861" duration="38000" />
       <workItem from="1616527885720" duration="845000" />
+      <workItem from="1616603661900" duration="3579000" />
     </task>
     <servers />
   </component>
