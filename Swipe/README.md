@@ -1,3 +1,26 @@
+<h1 align="center">VR Tangible Interaction Toolkit</h1>
+
+<h2 align="center">A-Frame Swipe Detector Component</h2>
+[A-Frame](https://aframe.io) component to detect swipe movement on multiple tangible objects detected with fiducial markers.
+
+### swipe
+
+#
+| Property | Description | Type | Default Value |
+| -------- | ----------------- | ---- |------------- |
+| markers | The set of markers where will be detected oclusion. | selectorAll |     |
+| sequences | The sequences that will be detected, based on the order of the variable markers. (ex: "1 2 3,3 2 1;" )| string |  |
+| maximumTime | Maximum time (in ms) to consider movement valid. | int | 1000 |
+| hasReference | To select if the markers have a reference or not. If so, it is the element with the component attached. | selectorAll |  |
+| eventTargets | Optional targets to emit event. | selectorAll |  |
+| debug | Optional parameter to activate debug prints. | boolean  |false |
+
+
+### Example
+
+Use by directly including the [browser files](examples):
+
+```html
 <html class="no-js" lang="">
 
 <head>
@@ -40,4 +63,5 @@
 </body>
 
 </html>
+```
 

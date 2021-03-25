@@ -3,6 +3,7 @@ AFRAME.registerComponent('swipe', {
     schema: {
         markers : {type: 'selectorAll'},
         sequences : {type: 'string'},
+        eventTargets: {type: 'selectorAll'},
         maximumTime : {type : 'int', default: 10000},
         hasReference : {type: 'boolean', default: true},
         debug : {type: 'boolean', default: false}
@@ -80,9 +81,15 @@ AFRAME.registerComponent('swipe', {
 
                     if(match == true ){
                         if(this.data.debug)
-                            console.log('event_swipe_sequence_' + sequenceIndex)
+                            console.log('event_swipe_' + sequenceIndex)
                         this.covered.splice(firstIndex , sequence.length)
-                        this.el.emit('event_swipe_sequence_' + sequenceIndex)
+                        this.el.emit('event_swipe_' + sequenceIndex)
+
+                        this.data.eventTargets.forEach(function (target) {
+                            target.emit('event_swipe_' + sequenceIndex)
+                            if(this.data.debug)
+                                console.log('Emitting event to : ', target);
+                        }.bind(this))
                     }
                 }
             }.bind(this))

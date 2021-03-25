@@ -10,7 +10,7 @@ AFRAME.registerComponent('shake-detector', {
 
 
   init: function (){
-    console.log("INITIALIZING SHAKE-DETECTOR COMPONENT")
+    console.log("INITIALIZING SHAKE-DETECTOR COMPONENT : ", this.el )
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();

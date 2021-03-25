@@ -1,7 +1,7 @@
 AFRAME.registerComponent('angle-detector', {
   schema: {
     threshold : {type: 'float', default: 20},
-    targets: {type: 'selectorAll'},
+    eventTargets: {type: 'selectorAll'},
     axis : {type: 'array', default: ['x','y','z']},
     debug : {type: 'boolean', default: false}
   },
@@ -62,18 +62,19 @@ AFRAME.registerComponent('angle-detector', {
 
           //Emit events to this object and targets
           this.el.emit(event_str)
-          this.data.targets.forEach(function (target) {
+
+          this.data.eventTargets.forEach(function (target) {
 
             if (target != null) {
               target.emit(event_str);
 
-              if(this.data.debug)
-                console.log('Emitting event: Rotation of', this.data.threshold, 'degrees (',THREE.Math.degToRad(this.data.threshold), ' rad) in ', axis, ' to:<', target, '>');
+              if (this.data.debug)
+                console.log('Emitting event: Rotation of', this.data.threshold, 'degrees (', THREE.Math.degToRad(this.data.threshold), ' rad) in ', axis, ' to:<', target, '>');
 
             }
           }.bind(this))
-
         }
+
       }.bind(this)
     )
   }

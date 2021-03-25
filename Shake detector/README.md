@@ -1,7 +1,7 @@
 <h1 align="center">VR Tangible Interaction Toolkit</h1>
 
-<h2 align="center">A-Frame Shake Detector component</h2>
-[A-Frame](https://aframe.io) component to detect shake movement of tangible objects detected withfiducial markers.
+<h2 align="center">A-Frame Shake Detector Component</h2>
+[A-Frame](https://aframe.io) component to detect shake movement of tangible objects detected with fiducial markers.
 
 ### shake-detector
 
@@ -22,9 +22,11 @@ Use by directly including the [browser files](examples):
 
 ```html
 <head>
+  <title>Shake Detector Component</title>
   <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-  <script src="https://rawgithubusercontent.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/master/Shake%20detector/shake_detector.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="../shake_detector.js"></script>
 </head>
 
 
@@ -32,7 +34,7 @@ Use by directly including the [browser files](examples):
   <a-scene arjs>
     <a-camera>
 
-        <a-marker preset = 'hiro'  shake-detector = "eventTargets:#myBox2; axis:y">
+        <a-marker preset = 'hiro'  shake-detector = "switchInterval: 500 ; minimumSwitchTimes: 3 ; minimumDistance: 0.3 ; eventTargets:#myBox2; axis:y ; debug: true;">
           <a-box></a-box>
         </a-marker>
 

@@ -2,7 +2,7 @@ AFRAME.registerComponent('button', {
 
   schema: {
     referenceMarker: {type: 'selector'},
-    targets: {type: 'selectorAll'},
+    eventTargets: {type: 'selectorAll'},
     minimumTime : {type: 'int', default: 1000},
     debug : {type: 'boolean', default: false}
   },
@@ -39,7 +39,7 @@ AFRAME.registerComponent('button', {
           this.el.emit('event_button_pressed')
 
           //To targets
-          this.data.targets.forEach(function (target) {
+          this.data.eventTargets.forEach(function (target) {
             target.emit('event_button_pressed');
             console.log('Emitting event: Button pressed');
           }.bind(this))
