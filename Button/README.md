@@ -13,7 +13,11 @@
 | eventTargets | Optional targets to emit event. | selectorAll |  |
 | minimumTime | Minimum time (in ms) that the marker need to be ocult to emit event. | int | 1000 |
 | debug | Optional parameter to activate debug prints. | boolean  |false |
-
+#
+###Events
+| Name | Description |
+| -------- | ----------------- |
+| event_button_pressed| Event corresponding to the pressing of the button (marker).
 #
 ### Example
 

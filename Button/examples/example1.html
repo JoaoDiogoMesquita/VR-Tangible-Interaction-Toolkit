@@ -11,6 +11,7 @@
 
 
 <body>
+
   <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
     <a-camera>
@@ -19,7 +20,7 @@
         <a-sphere color="red" radius="0.5"></a-sphere>
       </a-marker>
 
-      <a-marker preset='hiro'  button = "referenceMarker: #ref ; targets: #box;">
+      <a-marker preset='hiro'  button = "referenceMarker: #ref ; eventTargets: #box;">
         <a-sphere color="yellow" radius="0.5"></a-sphere>
       </a-marker>
 
@@ -30,7 +31,6 @@
            color="red"
            event-set__event_button_pressed="color:green">
     </a-box>
-
 
   </a-scene>
   </body>

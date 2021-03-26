@@ -24,14 +24,13 @@
       <change beforePath="$PROJECT_DIR$/Angle detector/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Angle detector/angle_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/angle_detector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Angle detector/examples/example1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/examples/example1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angle detector/examples/matrixmarker.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/examples/matrixmarker.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Button/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Button/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Button/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/Button/button.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Button/examples/example1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Button/examples/example1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shake detector/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shake detector/examples/example1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/examples/example1.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shake detector/shake_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/shake_detector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swipe/examples/example1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/examples/example1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Swipe/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Swipe/swipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/swipe.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +85,9 @@
       <workItem from="1616437869861" duration="38000" />
       <workItem from="1616527885720" duration="845000" />
       <workItem from="1616603661900" duration="7763000" />
+      <workItem from="1616689945434" duration="916000" />
+      <workItem from="1616713393526" duration="2247000" />
+      <workItem from="1616755764377" duration="4956000" />
     </task>
     <servers />
   </component>
@@ -105,6 +107,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="475" y="254" key="#Notifications" timestamp="1616757325730">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="475" y="254" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1616757325730" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616278301856">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -117,13 +123,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1616253358609" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1615919540273">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="290" y="115" key="Vcs.Push.Dialog.v2" timestamp="1616761197210">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1615919540273" />
+    <state x="290" y="115" key="Vcs.Push.Dialog.v2/0.0.1440.860@0.0.1440.860" timestamp="1616761197210" />
+    <state x="537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1616761205801">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="537" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1440.860@0.0.1440.860" timestamp="1616761205801" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1616097044852">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1616097044852" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1616759157235">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1616759157235" />
   </component>
 </project>

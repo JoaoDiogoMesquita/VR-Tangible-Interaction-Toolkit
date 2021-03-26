@@ -80,16 +80,32 @@ AFRAME.registerComponent('swipe', {
                     }
 
                     if(match == true ){
+                        const event_swipe = new CustomEvent('event_swipe', {
+                            detail: {
+                                time: time ,
+                                object : this.el ,
+                                sequence : sequence ,
+                                sequenceIndex : sequenceIndex ,
+                            }
+                        });
+
+
+                        this.el.dispatchEvent(event_swipe)
                         if(this.data.debug)
-                            console.log('event_swipe_' + sequenceIndex)
-                        this.covered.splice(firstIndex , sequence.length)
-                        this.el.emit('event_swipe_' + sequenceIndex)
+                            console.log('event_swipe' + event_swipe)
 
                         this.data.eventTargets.forEach(function (target) {
-                            target.emit('event_swipe_' + sequenceIndex)
+
+                            target.dispatchEvent(event_swipe)
+
                             if(this.data.debug)
-                                console.log('Emitting event to : ', target);
+                                console.log('event_swipe' + event_swipe)
+
+
                         }.bind(this))
+
+                        this.covered.splice(firstIndex , sequence.length)
+
                     }
                 }
             }.bind(this))

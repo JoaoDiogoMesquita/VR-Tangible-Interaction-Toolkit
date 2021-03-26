@@ -3,9 +3,9 @@
 <h2 align="center">A-Frame Swipe Detector Component</h2>
 [A-Frame](https://aframe.io) component to detect swipe movement on multiple tangible objects detected with fiducial markers.
 
-### swipe
+## swipe
 
-#
+###Schema
 | Property | Description | Type | Default Value |
 | -------- | ----------------- | ---- |------------- |
 | markers | The set of markers where will be detected oclusion. | selectorAll |     |
@@ -16,6 +16,13 @@
 | debug | Optional parameter to activate debug prints. | boolean  |false |
 
 
+#
+
+###Events
+| Name | Description |
+| -------- | ----------------- |
+| event_swipe| Event corresponding to a swipe interaction detected. 
+#
 ### Example
 
 Use by directly including the [browser files](examples):

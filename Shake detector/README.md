@@ -14,7 +14,12 @@
 | eventTargets | Optional targets to emit event. | selectorAll |  |
 | axis | Axis to detect movement switches. | array | ['x', 'y', 'z'] |
 | debug | Optional parameter to activate debug prints. | boolean  |false |
+#
 
+###Events
+| Name | Description |
+| -------- | ----------------- |
+| shake_event| Event emited when  the shake movement's detected. |
 
 ### Example
 

@@ -35,13 +35,23 @@ AFRAME.registerComponent('button', {
           console.log('Released at ', time, ' seconds.')
 
         if(time - this.timePressed >= this.minimumTime) {
+
+          const event_button = new CustomEvent('event_button_pressed', {
+            detail: {
+              time: time ,
+              object : this.el
+            },
+          });
+
           //To this element
-          this.el.emit('event_button_pressed')
+          this.el.dispatchEvent(event_button)
+          console.log('Emitting event: Button pressed   Time: ', time, '    Object: ', this.el , '    Target: ', this.el );
+
 
           //To targets
           this.data.eventTargets.forEach(function (target) {
-            target.emit('event_button_pressed');
-            console.log('Emitting event: Button pressed');
+            target.dispatchEvent(event_button)
+            console.log('Emitting event: Button pressed   Time: ', time, '    Object: ', this.el , '    Target: ', target   );
           }.bind(this))
         }
 

@@ -70,29 +70,27 @@ AFRAME.registerComponent('shake-detector', {
 
         if(this.switch.switchCount[elem] > this.data.minimumSwitchTimes) {
 
-          let eventString = 'shake_event_' + [elem];
+          const shake_event = new CustomEvent('event_shake', {
+            detail: {
+              time: time ,
+              axis: elem,
+              object : this.el
+            },
+          });
 
+          // Send the event to the entity that holds the component
+          this.el.dispatchEvent(shake_event)
+          console.debug('Emitting event_shake  to: <', this.el, '>');
 
           if (this.data.eventTargets != []) {
             this.data.eventTargets.forEach(target => {
-              if (target != null) {
-                console.debug('Emitting event ', [elem], ' to: <', target, '>');
-                // send axis event
-                target.emit(eventString);
+                // Send event to target
+                target.dispatchEvent(shake_event)
+                console.debug('Emitting event_shake ', [elem], ' to: <', target, '>');
 
-                // send generic event
-                target.emit('shake_event');
-              }
             });
-          } else {
-            console.debug('Emitting event  to: <', this.el, '>');
-            // Default behaviour is sending the event to the entity that holds the component
-            // send axis event
-            this.el.emit(eventString);
-
-            // send generic event
-            target.emit('shake_event');
           }
+
 
           //Restart counters
           this.switch.lastSwitchTime[elem] = 0;
