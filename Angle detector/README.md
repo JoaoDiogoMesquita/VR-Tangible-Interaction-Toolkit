@@ -1,52 +1,57 @@
-<h1 align="center">VR Tangible Interaction Toolkit</h1>
+#Angle Detector Component
+A component that aims to give the user the possibility of attach the angle rotation of a virtual object to a variable. The systems record in real time the angle in a chosen axis and emit an event to the rotating object (or additional targets) every time the rotations passes the input threshold.
 
-<h2 align="center">A-Frame Angle Detector Component</h2>
-[A-Frame](https://aframe.io) component to detect angle rotations on tangible objects detected with fiducial markers.
-#
+For [A-Frame](https://aframe.io).
 
 ### angle-detector
-
-
 | Property | Description | Type | Default Value |
 | -------- | ----------------- | ---- |------------- |
-| threshold | An event will be emited every time this threshold of the angle rotation is reached . | float | 20    |
+| threshold | An event will be emitted every time this threshold is reached . | float | 20    |
 | eventTargets | Optional targets to emit event. | selectorAll |  |
-| axis | Axis to detect movement switches. | array | ['x', 'y', 'z'] |
+| axis | Axis to detect rotation. | array | ['x', 'y', 'z'] |
 | debug | Optional parameter to activate debug prints. | boolean  |false |
+
+#
+### How to use
+The component can be attached to an object like in the following example:
+```html
+<a-box angle-detector="threshold:45; eventTargets: #box1,#box2,#box3; axis:y; debug: True" ></a-box>
+```
+
 #
 ###Events
+
 | Name | Description |
 | -------- | ----------------- |
 | rotation_event| Event corresponding to the positive rotation of the marker . |
 
-#
-### Example
-
-Use by directly including the [browser files](examples):
-
-```html
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Angle Detector Component</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
-    <script src="../angle_detector.js"></script>
-  </head>
-  
-  <body>
-    <a-scene>
-  
-      <a-box  position="-1 0 -10" rotation="0 0 0" color="blue"
-              animation="property: rotation;  to: 0 0 90 ; dur : 1000; "
-              angle-detector="threshold:45; eventTargets: #box1; axis:y">
-      </a-box>
- 
-      <a-box id='box1' position="3 0 -10" color="yellow" event-set__rotation_event ="color:red"></a-box>
-  
-    </a-scene>
-  </body>
-
-</html>
+An event called rotation_event will be emitted every time the interaction detected. Inside this event, there will be some fields with additional information like a timestamp (in ms) the axis where the rotation was detected, the direction (positive or negative), and the object rotated.
+```js
+const rotation_event = new CustomEvent('rotation_event', {
+    detail: {
+      time: time,
+      axis: axis ,
+      direction : direction,
+      threshold: this.threshold,
+      object : this.el
+    },
+});
 ```
+
+The aditional information can be acessed in the 'detail' field of the 'rotation_event' like in the following example:
+```js
+document.getElementById('id').addEventListener('rotation_event', e=>{
+    if(e.detail.direction == 'positive'){
+        console.log('Rotation of +', e.detail.threshold, ' angles in ', e.detail.axis, ' axis.')
+    }   
+    else if(e.detail.direction == 'negative'){
+        console.log('Rotation of -', e.detail.threshold, ' angles in ', e.detail.axis, ' axis.')    
+}
+})
+```
+
+
+
+###Examples
+
+* [Example 1](examples/example1.html)

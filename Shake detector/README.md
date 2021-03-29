@@ -1,11 +1,10 @@
-<h1 align="center">VR Tangible Interaction Toolkit</h1>
+#A-Frame Shake Detector Component
+A component that aims to give the user the possibility of detect a shake movement of an object. The systems record in real time the positions in the chosen axes and emit an event to the object (or additional targets) every time the interaction is detected according to the specification given by the user.
 
-<h2 align="center">A-Frame Shake Detector Component</h2>
-[A-Frame](https://aframe.io) component to detect shake movement of tangible objects detected with fiducial markers.
-
+For [A-Frame](https://aframe.io). 
+#
 ### shake-detector
 
-#
 | Property | Description | Type | Default Value |
 | -------- | ----------------- | ---- |------------- |
 | switchInterval | Maximum time (in ms) defined between two direction switches. | int |   1000     |
@@ -15,38 +14,40 @@
 | axis | Axis to detect movement switches. | array | ['x', 'y', 'z'] |
 | debug | Optional parameter to activate debug prints. | boolean  |false |
 #
+### How to use
+The component can be attached to an object like in the following examples:
+```html
+<a-marker preset = 'hiro'  shake-detector = "switchInterval: 500 ; minimumSwitchTimes: 3 ; minimumDistance: 0.3 ; eventTargets:#myBox; axis:y ; debug: true;">
+  <a-box></a-box>
+</a-marker>
+```
 
 ###Events
 | Name | Description |
 | -------- | ----------------- |
 | shake_event| Event emited when  the shake movement's detected. |
 
-### Example
+An event called shake_event will be emitted every time the object is shaken according to the proprieties given by the user.
+Inside this event, there will be some fields with additional information like a timestamp (in ms) the axis where the shake movement was detected, and the object shaked.
+```js
+const shake_event = new CustomEvent('event_shake', {
+    detail: {
+      time: time ,
+      axis: elem,
+      object : this.el
+    }
+})
+```
+The information related to the event can be accessed in the 'detail' field like in the following example:
 
-Use by directly including the [browser files](examples):
-
-```html
-<head>
-  <title>Shake Detector Component</title>
-  <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
-  <script src="../shake_detector.js"></script>
-</head>
-
-
-<body>
-  <a-scene arjs>
-    <a-camera>
-
-        <a-marker preset = 'hiro'  shake-detector = "switchInterval: 500 ; minimumSwitchTimes: 3 ; minimumDistance: 0.3 ; eventTargets:#myBox2; axis:y ; debug: true;">
-          <a-box></a-box>
-        </a-marker>
-
-        <a-box position="0 0 -10" id = "myBox2" event-set__shake_event_y = "color:yellow; position: 0 0 -5" ></a-box>
-    
-    </a-camera>
-  </a-scene>
-</body>
+```js
+document.getElementById('id').addEventListener('event_swipe', e=>{
+    console.log('Swipe sequence detected. Sequence: ', e.detail.sequenceIndex, ', ', e.detail.sequence, '. Time: ', e.detail.time)
+})
 ```
 
+
+#
+###Examples
+
+* [Exam
