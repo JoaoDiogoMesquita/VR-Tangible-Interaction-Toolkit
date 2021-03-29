@@ -75,7 +75,7 @@ AFRAME.registerComponent('shake-detector', {
               time: time ,
               axis: elem,
               object : this.el
-            },
+            }
           });
 
           // Send the event to the entity that holds the component

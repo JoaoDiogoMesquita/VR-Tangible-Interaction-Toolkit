@@ -63,7 +63,8 @@ AFRAME.registerComponent('angle-detector', {
               time: time,
               axis: axis ,
               direction : direction,
-              object : this.el
+              object : this.el,
+              threshold: this.threshold
             },
           });
           this.el.dispatchEvent(event_rotation)
