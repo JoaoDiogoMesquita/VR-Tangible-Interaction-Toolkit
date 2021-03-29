@@ -3,7 +3,16 @@ A component that aims to give the user the possibility of a button interaction. 
 
 For [A-Frame](https://aframe.io).
 
+
+
+
+
 #
+
+
+
+
+
 ### button
 
 
@@ -16,6 +25,12 @@ For [A-Frame](https://aframe.io).
 
 
 #
+
+
+
+
+
+
 ### How to use
 
 
@@ -33,6 +48,12 @@ The component can be attached to a reference  marker object like in the followin
 
 <a-box id="'box"></a-box>
 ```
+
+
+
+
+
+
 
 
 ### Events
@@ -54,13 +75,26 @@ An event called event_button_pressed will be emitted every time the interaction 
 });
 ```
 
+
+
 Inside this event, there will be some fields with additional information like a timestamp (in ms) and the object that works as reference.
+
 
 ```js
 document.getElementById('id').addEventListener('event_button_pressed', e=>{
     console.log('Button pressed with reference +', e.detail.object, '. Time: ', e.detail.time)
 })
 ```
+
+
+
+
+
+
+
+
+
+
 
 
 
