@@ -1,4 +1,4 @@
-#Angle Detector Component
+# Angle Detector Component
 A component that aims to give the user the possibility of attach the angle rotation of a virtual object to a variable. The systems record in real time the angle in a chosen axis and emit an event to the rotating object (or additional targets) every time the rotations passes the input threshold.
 
 For [A-Frame](https://aframe.io).
@@ -19,7 +19,7 @@ The component can be attached to an object like in the following example:
 ```
 
 #
-###Events
+### Events
 
 | Name | Description |
 | -------- | ----------------- |
@@ -52,6 +52,6 @@ document.getElementById('id').addEventListener('rotation_event', e=>{
 
 
 
-###Examples
+### Examples
 
 * [Example 1](examples/example1.html)

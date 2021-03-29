@@ -21,11 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0e2de942-afd6-4bff-987c-d507bbc063ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angle detector/angle_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/angle_detector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angle detector/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Button/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shake detector/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shake detector/shake_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/shake_detector.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Swipe/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swipe/examples/example1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/examples/example1.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +84,7 @@
       <workItem from="1616766261188" duration="3115000" />
       <workItem from="1616780689212" duration="4157000" />
       <workItem from="1617025837355" duration="4787000" />
-      <workItem from="1617031224122" duration="109000" />
+      <workItem from="1617031224122" duration="288000" />
     </task>
     <servers />
   </component>

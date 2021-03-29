@@ -1,5 +1,4 @@
-#
-##A-Frame Shake Detector Component
+# A-Frame Shake Detector Component
 A component that aims to give the user the possibility of detect a shake movement of an object. The systems record in real time the positions in the chosen axes and emit an event to the object (or additional targets) every time the interaction is detected according to the specification given by the user.
 
 For [A-Frame](https://aframe.io). 
@@ -23,7 +22,7 @@ The component can be attached to an object like in the following examples:
 </a-marker>
 ```
 #
-###Events
+### Events
 | Name | Description |
 | -------- | ----------------- |
 | shake_event| Event emited when  the shake movement's detected. |
@@ -49,6 +48,6 @@ document.getElementById('id').addEventListener('event_swipe', e=>{
 
 
 #
-###Examples
+### Examples
 
 * [Example 1](examples/example1.html)

@@ -1,9 +1,9 @@
-#Button Component
+# Button Component
 A component that aims to give the user the possibility of a button interaction. The systems record in real time the visibility of the reference and auxiliary markers and emit an event to the reference marker (or additional targets) every time the auxiliary marker is occult for time defined by the user.
 
 For [A-Frame](https://aframe.io).
-#
 
+#
 ### button
 
 
@@ -16,8 +16,8 @@ For [A-Frame](https://aframe.io).
 
 
 #
-###How to use
-The component can be attached to a reference marker object like in the following example:
+### How to use
+The component can be attached to a reference  marker object like in the following example:
 ```html
 <a-marker  preset='kanji' id = 'Ref'>
     <a-sphere color="red" radius="0.5"></a-sphere>
@@ -31,7 +31,7 @@ The component can be attached to a reference marker object like in the following
 ```
 
 
-###Events
+### Events
 | Name | Description |
 | -------- | ----------------- |
 | event_button_pressed| Event corresponding to the pressing of the button (marker).
@@ -52,6 +52,6 @@ document.getElementById('id').addEventListener('event_button_pressed', e=>{
     console.log('Button pressed with reference +', e.detail.object, '. Time: ', e.detail.time)
 })
 ```
-###Examples
+### Examples
 
 * [Example 1](examples/example1.html)

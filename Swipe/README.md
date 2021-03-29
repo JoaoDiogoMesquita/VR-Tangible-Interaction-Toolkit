@@ -1,5 +1,4 @@
-#
-###Swipe Detector Component
+# Swipe Detector Component
 A component that aims to give the user the possibility of detect swipe movements in a set of fiducial markers. The systems record in real time the occlusion of those markers and emit an event to the object where the component's attached (or additional targets) every time a sequence is detected.
 
 For [A-Frame](https://aframe.io).
@@ -55,14 +54,13 @@ Without reference:
 
 </a-marker>
 ```
-#
-####NOTE 
+#### NOTE 
 The order of the sequence is made with the order that the markers are in the HMTL file. 
 In the reference example the order will be : my1, my2, my3 . 
 In the second example (without reference) the order will be : my1, my3, my2. As so, the sequences are different. 
 #
 
-###Events
+### Events
 | Name | Description |
 | -------- | ----------------- |
 | event_swipe| Event corresponding to a swipe interaction detected. 
@@ -89,6 +87,6 @@ document.getElementById('id').addEventListener('event_swipe', e=>{
  
 
 #
-###Examples
+### Examples
 
 * [Example 1](examples/example1.html)
