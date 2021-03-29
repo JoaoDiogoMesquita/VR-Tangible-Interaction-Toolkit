@@ -17,7 +17,11 @@ For [A-Frame](https://aframe.io).
 
 #
 ### How to use
+
+
 The component can be attached to a reference  marker object like in the following example:
+
+
 ```html
 <a-marker  preset='kanji' id = 'Ref'>
     <a-sphere color="red" radius="0.5"></a-sphere>
@@ -32,11 +36,15 @@ The component can be attached to a reference  marker object like in the followin
 
 
 ### Events
+
+
 | Name | Description |
 | -------- | ----------------- |
 | event_button_pressed| Event corresponding to the pressing of the button (marker).
 
+
 An event called event_button_pressed will be emitted every time the interaction detected.
+
 ```js
  const event_button = new CustomEvent('event_button_pressed', {
     detail: {
@@ -45,6 +53,7 @@ An event called event_button_pressed will be emitted every time the interaction 
     }
 });
 ```
+
 Inside this event, there will be some fields with additional information like a timestamp (in ms) and the object that works as reference.
 
 ```js
@@ -52,6 +61,9 @@ document.getElementById('id').addEventListener('event_button_pressed', e=>{
     console.log('Button pressed with reference +', e.detail.object, '. Time: ', e.detail.time)
 })
 ```
+
+
+
 ### Examples
 
 * [Example 1](examples/example1.html)
