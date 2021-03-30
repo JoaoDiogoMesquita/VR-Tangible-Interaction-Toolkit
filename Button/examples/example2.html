@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Button Component</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="../button.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+</head>
+
+
+<body>
+
+  <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+    <a-entity id = "env"; environment="preset: japan;
+                       dressing: torii;
+                       dressingAmount: 20;
+                       dressingColor: red;
+                       dressingScale: 10;"></a-entity>
+
+    <a-camera>
+
+      <a-marker id = 'ref' preset='kanji' button = "referenceMarker: #aux ; eventTargets: #box;" >
+        <a-cylinder color="orange" radius="0.3" height="0.2"></a-cylinder>
+        <a-text allign = "center" width="1" value="Reference"></a-text>
+      </a-marker>
+
+      <a-marker  id = 'aux' preset='hiro' button = "referenceMarker: #ref ; eventTargets: #box; ">
+        <a-cylinder color="green" radius="0.3" height="0.2"></a-cylinder>
+        <a-text allign = "center"  width="1" value="Click here"></a-text>
+      </a-marker>
+
+    </a-camera>
+
+    <a-box id='box'
+           position="0 0 -10"
+           color="red">
+    </a-box>
+
+
+  </a-scene>
+
+  <script>
+    let box = document.getElementById('box')
+    let env = document.getElementById('env')
+    box.addEventListener('event_button_pressed', e=>{
+      console.log(e.detail)
+      if(e.detail.object.id == 'aux'){
+        env.setAttribute('environment', 'preset: egypt; dressing: piramid ;dressingAmount: 20;dressingColor: red;dressingScale: 10;');
+      }
+      else if(e.detail.object.id == 'ref'){
+        env.setAttribute('environment', 'preset: japan; dressing: torii ;dressingAmount: 20;dressingColor: red;dressingScale: 10;');
+      }
+    });
+  </script>
+
+
+  </body>
+
+</html>
+
+
