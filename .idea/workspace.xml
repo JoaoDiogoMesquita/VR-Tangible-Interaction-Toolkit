@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e2de942-afd6-4bff-987c-d507bbc063ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Button/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Button/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angle detector/angle_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/angle_detector.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,19 +40,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Swipe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Usability tests" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Swipe" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Swipe\examples" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Angle detector\examples" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Shake detector\examples" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Single_button\examples" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Swipe" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -81,6 +84,9 @@
       <workItem from="1616780689212" duration="4157000" />
       <workItem from="1617025837355" duration="4787000" />
       <workItem from="1617031224122" duration="415000" />
+      <workItem from="1617039424979" duration="4324000" />
+      <workItem from="1617051743848" duration="41000" />
+      <workItem from="1617093008460" duration="1893000" />
     </task>
     <servers />
   </component>

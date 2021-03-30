@@ -17,7 +17,7 @@ AFRAME.registerComponent('angle-detector', {
 
 
 
-  tick: function () {
+  tick: function (time) {
     //Ignore first rotation, because of the agressive change in coordenates from 0,0,0 to first position
     if(this.firstIteration && this.el.object3D.visible){
       this.firstIteration = false;
