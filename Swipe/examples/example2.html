@@ -1,0 +1,69 @@
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Swipe Component</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="../swipe.js"></script>
+
+</head>
+
+<body>
+    <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-entity id = 'env' environment="preset: default;"></a-entity>
+
+        <a-camera>
+
+            <a-marker preset="hiro"  swipe = "markers:#my1,#my2,#my3; eventTargets: #box, #env; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: True; debug: True;">
+                <a-box id="reference" color="green" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my1" type="barcode" value="1"  >
+                <a-box  color="blue" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my2" type="barcode" value="2" >
+                <a-box color="red" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my3" type="barcode" value="3" >
+                <a-box  color="yellow" height = 0.05></a-box>
+            </a-marker>
+
+        </a-camera>
+
+
+        <a-box id='box' position="3 0 -10" color="yellow" event-set__event_swipe ="color:red"></a-box>
+
+    </a-scene>
+
+    <script>
+        let env = document.getElementById('env')
+        var index = 0;
+        let envs = ['contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris']
+        env.addEventListener('event_swipe', e=>{
+
+            console.log(e.detail.sequenceIndex)
+            if(e.detail.sequenceIndex == 1){
+                if(index != envs.length){
+                    index += 1;
+                    preset = envs[index]
+                }
+            }
+            else if(e.detail.sequenceIndex == 2){
+                if(index != 0){
+                    index -= 1;
+                    preset = envs[index]
+                }
+            }
+            env.setAttribute('environment', 'preset:'+ preset );
+            console.log(env)
+        });
+    </script>
+</body>
+
+</html>
+

@@ -1,36 +1,24 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Angle Detector</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
-    <script src="../angle_detector.js"></script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Angle Detector</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="../angle_detector.js"></script>
+</head>
 
-  <body>
-    <a-scene>
+<body>
+<a-scene>
+  <a-box position="1 0 -10" rotation="0 0 0" color="blue"
+         animation="property: rotation;  to: 0 0 180 ; dur : 1000; ">
+  </a-box>
 
-      <a-box  position="-1 0 -10" rotation="0 0 0" color="blue"
-              animation="property: rotation;  to: 0 0 90 ; dur : 1000; ">
-      </a-box>
+  <a-box id='box1' position="3 0 -10" color="yellow" event-set__rotation_event ="color:red"></a-box>
 
-
-      <a-box position="1 0 -10" rotation="0 0 0" color="blue"
-             animation="property: rotation;  to: 0 0 -90 ; dur : 1000; "
-             angle-detector="threshold:45; debug: True;">
-      </a-box>
-
-      <a-marker preset = 'hiro'  angle-detector="threshold:45; eventTargets: #box1, #box2; axis:y; debug: True;">">
-        <a-box color="red" radius="0.5"></a-box>
-      </a-marker>
-
-      <a-box id='box1' position="3 0 -10" color="yellow" event-set__rotation_event ="color:red"></a-box>
-      <a-box id='box2' position="-3 0 -10" color="purple" event-set__rotation_event ="color:red"></a-box>
-
-    </a-scene>
-  </body>
+</a-scene>
+</body>
 
 </html>
 
