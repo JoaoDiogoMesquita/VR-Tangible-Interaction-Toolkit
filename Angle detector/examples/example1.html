@@ -12,10 +12,11 @@
 <body>
 <a-scene>
   <a-box position="1 0 -10" rotation="0 0 0" color="blue"
-         animation="property: rotation;  to: 0 0 180 ; dur : 1000; ">
+         animation="property: rotation;  to: 0 0 180 ; dur : 1000;"
+         angle_detector = "threshold: 20; eventTargets: #box ; axis:z; debug:True;">
   </a-box>
 
-  <a-box id='box1' position="3 0 -10" color="yellow" event-set__rotation_event ="color:red"></a-box>
+  <a-box id='box' position="3 0 -10" color="yellow" event-set__rotation_event = "color:red"></a-box>
 
 </a-scene>
 </body>
