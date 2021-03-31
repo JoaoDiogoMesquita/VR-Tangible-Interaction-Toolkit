@@ -246,67 +246,7 @@ Refer to the [A-Frame documentation](https://aframe.io/docs/1.1.0/introduction/w
 </html>
 ```
 
-
-###References
+#
+### References
 [1]- Based on A-Frame tutorial by ZeCanelha https://github.com/ZeCanelha/AFrame-Tutorial/blob/master/README.md
 
-
-#
-
-
-
-###Documentation:
-In A-Frame we can use components created by the community. Here, we will use a set of 4 components: 
-[Shake Detector](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Shake%20detector),
-[Angle Detector](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Angle%20detector),
-[Swipe](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Swipe),
-[Button](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Button).
-#
-### Task List
-
-#### Task Set 1 (Shake Detector Component)
-
-
-- Use the Shake detector component in the object 'marker1' without parameters.
-- Personalize the component behaviour with the parameters in the table.
-
-| Parameter | Value | 
-| --------- | ------ | 
-| switchInterval| 2000|
-|minimumSwitchTimes | 2 |
-|minimumDistance | 1  |
-|eventTargets | box1 |
-|axis | y |
-|debug | True |
-
-
-#### Task Set 2
-
-- Use the Angle detector component in the object 'marker1' with the parameters in the table.
-- Personalize the component behaviour with the parameters in the table.
-- Catch the event emitted by the component and choose a consequential behaviour.
-
-| Parameter | Value | 
-| --------- | ------ | 
-| threshold| 10 |
-| eventTargets | box1 |
-| axis |  z |
-
-#### Task Set 3
-
-Make changes in the example `Task3` provided to match the following:
-
-- Apply a translation animation to the `<a-box>` primitive from its initial position to `"2 1.5 -10"`
-
-#### Task Set 4
-
-Make changes in the example `Task4` provided to match the following:
-
-Using the `<a-entity>` element provide the following characteristics:
-
-- Give the empty entity the shape and appearance of a yellow (`#FFF200`) cube.
-- Position the yellow cube at `"2 1.5 -10"`
-- Give to another empty entity the shape and appearance of a red (`#FF0000`) sphere.
-- Position the red sphere at `"-2 1.5 -10"` and apply a scale transformation of `2 2 1`.
-
-At this point, we have finished the first section of the A-Frame Tutorial. The main objective was to introduce the basic concepts of this framework. With the knowledge acquired we now want the participant to do two more tasks focused on the use of an external component, the [vibrotactile component](#vibrate).

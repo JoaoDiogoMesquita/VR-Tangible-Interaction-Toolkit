@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title> Task 4</title>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="angle_detector.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+</head>
+
+<body>
+  <a-scene>
+    <!--Environment setup -->
+    <a-entity id = 'env' environment="preset: forest;
+                             dressing: trees;
+                             dressingAmount: 20;
+                             dressingColor: red;
+                             dressingScale: 1">
+    </a-entity>
+
+    <a-box id= 'box1' position="-3 2 -5" rotation="0 0 0" color="blue"
+           animation="property: rotation;  to: 0 0 180 ; dur : 1000;"
+           angle-detector = "threshold: 20; eventTargets: #sphere1 ; axis:z; debug:True;">
+    </a-box>
+
+    <a-sphere id='sphere1' position="3 2 -10" color="yellow"></a-sphere>
+
+  </a-scene>
+
+  <script>
+    let sphere = document.getElementById('sphere1');
+    sphere.addEventListener('rotation_event', function(e){
+      var position = sphere.object3D.position;
+      sphere.setAttribute('position', {x: position.x , y: position.y  , z: position.z +1 } );
+    });
+  </script>
+
+</body>
+
+</html>
+
