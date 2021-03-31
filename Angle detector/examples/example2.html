@@ -6,13 +6,14 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
   <script src="../angle_detector.js"></script>
 </head>
 
 <body>
 <a-scene arjs>
-  <a-light id="ambientLight" type="ambient" color="#BBB" > </a-light>
-
+  <a-light id="ambientLight" intensity= 1; type="ambient" color="#BBB" > </a-light>
+  <a-entity id = 'env' environment="preset: goldmine;"></a-entity>
   <a-camera>
     <a-marker preset = 'hiro'  angle-detector = "threshold: 20; eventTargets: #box,#ambientLight; axis:y; debug:false;">
       <a-box color="red" radius="0.5"></a-box>
@@ -26,13 +27,19 @@
 <script>
   let light = document.getElementById('ambientLight')
   light.addEventListener('rotation_event', e=> {
+    var intensity = parseFloat(light.getAttribute('intensity'))
+
     if(e.detail.direction == 'positive'){
-      var intensity = light.getAttribute('intensity');
-      light.setAttribute('intensity',intensity + 0.1 )
+      if(intensity < 1) {
+        intensity += 0.1;
+        light.setAttribute('intensity', intensity)
+      }
     }
     else if(e.detail.direction == 'negative'){
-      var intensity = light.getAttribute('intensity');
-      light.setAttribute('intensity', intensity )
+      if(intensity > 0) {
+        intensity -= 0.1;
+        light.setAttribute('intensity', intensity)
+      }
     }
     console.log(light.getAttribute('intensity'))
 

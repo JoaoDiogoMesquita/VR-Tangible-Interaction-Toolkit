@@ -18,7 +18,7 @@ For [A-Frame](https://aframe.io).
 
 | Property | Description | Type | Default Value |
 | -------- | ----------------- | ---- |------------- |
-| referenceMarker | A reference to another marker that need to be in scene to detect the interaction. | selector |     |
+| reference | A reference to another marker that need to be in scene to detect the interaction. | selector |     |
 | eventTargets | Optional targets to emit event. | selectorAll |  |
 | minimumTime | Minimum time (in ms) that the marker need to be ocult to emit event. | int | 1000 |
 | debug | Optional parameter to activate debug prints. | boolean  |false |

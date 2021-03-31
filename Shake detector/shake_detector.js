@@ -82,7 +82,7 @@ AFRAME.registerComponent('shake-detector', {
           this.el.dispatchEvent(shake_event)
           console.debug('Emitting event_shake  to: <', this.el, '>');
 
-          if (this.data.eventTargets != []) {
+          if (this.data.eventTargets != null) {
             this.data.eventTargets.forEach(target => {
                 // Send event to target
                 target.dispatchEvent(shake_event)

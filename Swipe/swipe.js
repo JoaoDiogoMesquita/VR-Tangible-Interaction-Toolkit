@@ -56,8 +56,6 @@ AFRAME.registerComponent('swipe', {
 
             //Filter covered structure by time passed, given the maximum time
             this.covered = this.covered.filter(item => this.maximumTime > time - item.time)
-            if(this.data.debug)
-                console.log('Covered after filter --> ', this.covered)
 
                 //Test if a sequence was done
             var sequenceIndex = 0;

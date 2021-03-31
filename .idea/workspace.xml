@@ -20,14 +20,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e2de942-afd6-4bff-987c-d507bbc063ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Usability tests/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 1/shake_detector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 1/task1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 2/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 2/task2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/swipe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/task3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/angle_detector.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Tasks.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Tutorial.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Angle detector/angle_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/angle_detector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angle detector/examples/example2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/examples/example2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Button/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/Button/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shake detector/examples/example2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/examples/example2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shake detector/shake_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/shake_detector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Swipe/swipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/swipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,16 +61,20 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Usability tests" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Usability tests/Task Set 4" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 4" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 3" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 2" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 1" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests" />
-      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Swipe" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Swipe\examples" />
@@ -86,7 +113,10 @@
       <workItem from="1617031224122" duration="415000" />
       <workItem from="1617039424979" duration="4324000" />
       <workItem from="1617051743848" duration="41000" />
-      <workItem from="1617093008460" duration="1893000" />
+      <workItem from="1617093008460" duration="5472000" />
+      <workItem from="1617103841889" duration="1114000" />
+      <workItem from="1617110654329" duration="10461000" />
+      <workItem from="1617197233784" duration="14581000" />
     </task>
     <servers />
   </component>
@@ -118,9 +148,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="430" y="219" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1366.728@0.0.1366.728" timestamp="1615827311154" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1616253358609">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1617201726346">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1617201726346" />
+    <state x="1854" y="141" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1440.860@1366.0.1440.860" timestamp="1617116121319" />
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1616253358609" />
     <state x="290" y="115" key="Vcs.Push.Dialog.v2" timestamp="1616761197210">
       <screen x="0" y="0" width="1440" height="860" />

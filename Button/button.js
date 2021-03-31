@@ -1,7 +1,7 @@
 AFRAME.registerComponent('button', {
 
   schema: {
-    referenceMarker: {type: 'selector'},
+    reference: {type: 'selector'},
     eventTargets: {type: 'selectorAll'},
     minimumTime : {type: 'int', default: 1000},
     debug : {type: 'boolean', default: false}
@@ -10,7 +10,7 @@ AFRAME.registerComponent('button', {
   init: function () {
     console.log("INITIALIZING BUTTON COMPONENT")
     this.button = this.el;
-    this.reference = this.data.referenceMarker;
+    this.reference = this.data.reference;
     this.pressed = false;
     this.timePressed = 0;
     this.minimumTime = this.data.minimumTime;
