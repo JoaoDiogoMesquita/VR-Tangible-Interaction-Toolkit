@@ -20,25 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e2de942-afd6-4bff-987c-d507bbc063ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 1/shake_detector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 1/task1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 2/button.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 2/task2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/swipe.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/task3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/angle_detector.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Tasks.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Usability tests/Tutorial.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angle detector/angle_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/angle_detector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Angle detector/examples/example2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/examples/example2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Button/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Button/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Button/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/Button/button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shake detector/examples/example2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/examples/example2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shake detector/shake_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/shake_detector.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swipe/swipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/swipe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Usability tests/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +99,8 @@
       <workItem from="1617093008460" duration="5472000" />
       <workItem from="1617103841889" duration="1114000" />
       <workItem from="1617110654329" duration="10461000" />
-      <workItem from="1617197233784" duration="14581000" />
+      <workItem from="1617197233784" duration="14800000" />
+      <workItem from="1617214539747" duration="601000" />
     </task>
     <servers />
   </component>
