@@ -1,16 +1,19 @@
-AFRAME.registerComponent('swipe', {
+AFRAME.registerComponent('mt-swipe', {
 
     schema: {
         markers : {type: 'selectorAll'},
         sequences : {type: 'string'},
         eventTargets: {type: 'selectorAll'},
-        maximumTime : {type : 'int', default: 10000},
+        maximumTime : {type : 'int', default: 1000},
         hasReference : {type: 'boolean', default: true},
         debug : {type: 'boolean', default: false}
     },
 
     init: function () {
-        console.log("INITIALIZING SWIPE-DETECTOR COMPONENT\n")
+        console.info("Initializing mt-swipe component.")
+    },
+
+    update: function() {
         this.maximumTime= this.data.maximumTime;
         this.hasReference = this.data.hasReference;
         this.sequences = []
@@ -28,10 +31,10 @@ AFRAME.registerComponent('swipe', {
         for(let i=0; i<aux.length; i++){
             this.sequences.push(aux[i].split(' '))
         }
-
-        console.log('MARKERS --> ', this.markers)
-        console.log('SEQUENCES --> ', this.sequences)
-
+        if (this.data.debug) {
+            console.debug('Markers --> ', this.markers)
+            console.debug('Sequences --> ', this.sequences)
+        }
     },
 
 
@@ -50,7 +53,7 @@ AFRAME.registerComponent('swipe', {
                     this.covered.push(newCovered)
                     this.lastCovered = newCovered
                     if(this.data.debug)
-                        console.log(this.covered)
+                        console.debug(this.covered.map(x => x.id))
                 }
             }.bind(this))
 
@@ -90,14 +93,13 @@ AFRAME.registerComponent('swipe', {
 
                         this.el.dispatchEvent(event_swipe)
                         if(this.data.debug)
-                            console.log('event_swipe' + event_swipe)
+                            console.debug('event_swipe', event_swipe)
 
                         this.data.eventTargets.forEach(function (target) {
 
                             target.dispatchEvent(event_swipe)
-
                             if(this.data.debug)
-                                console.log('event_swipe' + event_swipe)
+                                console.debug('event_swipe',  event_swipe)
 
 
                         }.bind(this))

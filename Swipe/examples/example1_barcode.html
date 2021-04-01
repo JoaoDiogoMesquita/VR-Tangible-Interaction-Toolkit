@@ -1,0 +1,41 @@
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>Swipe Component</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="../swipe.js"></script>
+</head>
+
+<body>
+    <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3; debug: true'>
+
+        <a-camera>
+
+            <a-marker type="barcode" value="0" mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box1, #box2 ; sequences:1 3,3 1; maximumTime: 3000; hasReference: true; debug: true;">
+                <a-box id="reference" color="green" ></a-box>
+            </a-marker>
+
+            <a-marker id="my2" type="barcode" value="2" >
+                <a-box color="red" ></a-box>
+            </a-marker>
+
+            <a-marker id="my3" type="barcode" value="3" >
+                <a-box  color="yellow" ></a-box>
+            </a-marker>
+
+            <a-marker id="my1" type="barcode" value="1"  >
+                <a-box  color="blue" ></a-box>
+            </a-marker>
+        </a-camera>
+
+
+        <a-box id='box1' position="3 0 -10" color="yellow" event-set__event_swipe_1 ="color:red"></a-box>
+
+    </a-scene>
+</body>
+
+</html>
+
