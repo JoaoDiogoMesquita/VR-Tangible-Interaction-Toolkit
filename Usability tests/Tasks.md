@@ -29,7 +29,8 @@
 | Parameter | Value | 
 | --------- | ------ | 
 | reference | ref |
-| minimumTime |  500 |
+| minimumTime |  200 |
+| eventTargets | #box  |  
 | debug |  true |
 
 - Code: [Task Set 2](Task Set 2)
@@ -38,7 +39,7 @@
 ### Task Set 3 ([Swipe Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Swipe))
 
 - Run the HMTL code and explore the environment.
-- Use the Swipe detector component in the object <a-scene> without a reference and with the parameters in the table.
+- Use the Swipe detector component in the object <a-scene> without a reference.
 - Personalize the component behaviour with the parameters in the table.
 - The interaction is not being detected and event emitted. Try to find out why and resolve it.
 - Turn the object 'sphere1' color to red if sequence 1 is detected, and green in case of sequence 2.
@@ -58,13 +59,13 @@
 ### Task Set 4 ([Angle Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Angle%20detector))
 
 - Run the HMTL code and explore the environment.
-- Use the Angle detector component in the object 'box1' with parameters of your choose.
+- Use the Angle detector component in the object 'marker1' with parameters of your choose.
 - If the interaction is not being detected, use the component behaviour with the parameters in the table.
-- Change the script code to increment the z variable case the event is related to a 'positive' rotation and decrement in case of a 'negative' rotation.
+- Change the script code to increment the z variable case the event is related to a 'positive' rotation and decrement in case of a 'negative' rotation (check component's documentation).
 
 | Parameter | Value | 
 | --------- | ------ | 
-| threshold| 20 |
+| threshold| 45 |
 | eventTargets | #sphere1 |
 | axis |  z |
 | debug |  true |

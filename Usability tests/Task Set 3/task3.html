@@ -5,6 +5,7 @@
     <title>Swipe Component</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="swipe.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 
@@ -12,50 +13,34 @@
 
 <body>
     <!-- Insert your code in this area -->
-    <a-scene>
+    <a-scene arjs='sourceType: video; sourceUrl: video.mp4 ; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
     <!-- -- -->
 
         <!--Environment setup -->
-        <a-entity id = 'env' environment="preset: egypt;
-                           dressing: pyramids;
-                           dressingAmount: 20;
-                           dressingColor: red;
-                           dressingScale: 1">
+        <a-entity id = 'env' environment="preset: egypt; dressing: pyramids;"></a-entity>
+
+        <a-entity position = '0 3 0'>
+            <a-marker preset="hiro"> </a-marker>
+
+            <a-marker id="my1" type="barcode" value="1"  >
+                <a-box  color="blue" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my2" type="barcode" value="2" >
+                <a-box color="red" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my3" type="barcode" value="3" >
+                <a-box  color="yellow" height = 0.05></a-box>
+            </a-marker>
         </a-entity>
-
-        <a-box id="box1" color="yellow" position="-2 1 -5"></a-box>
-        <a-box id="box2" color="orange" position="0 1 -5"></a-box>
-        <a-box id="box3" color="red" position="2 1 -5"></a-box>
-
         <!-- Insert your code in this area -->
-        <a-sphere id="sphere1"  color="purple" position="0 4 -5"></a-sphere>
+        <a-sphere id="sphere1"  color="purple" position="0 3 -10"></a-sphere>
         <!-- -- -->
 
     </a-scene>
 
-    <script>
-        <!--Sequence 1 begin -->
-        setTimeout(function(){document.getElementById('box1').setAttribute('visible', false)},1000);
-        setTimeout(function(){document.getElementById('box1').setAttribute('visible', true)},1100);
 
-        setTimeout(function(){document.getElementById('box2').setAttribute('visible', false)},1200);
-        setTimeout(function(){document.getElementById('box2').setAttribute('visible', true)},1300);
-
-        setTimeout(function(){document.getElementById('box3').setAttribute('visible', false)},1400);
-        setTimeout(function(){document.getElementById('box3').setAttribute('visible', true)},1500);
-        <!--Sequence 1 end -->
-
-        <!--Sequence 2 begin -->
-        setTimeout(function(){document.getElementById('box3').setAttribute('visible', false)},2000);
-        setTimeout(function(){document.getElementById('box3').setAttribute('visible', true)},2100);
-
-        setTimeout(function(){document.getElementById('box2').setAttribute('visible', false)},2200);
-        setTimeout(function(){document.getElementById('box2').setAttribute('visible', true)},2300);
-
-        setTimeout(function(){document.getElementById('box1').setAttribute('visible', false)},2400);
-        setTimeout(function(){document.getElementById('box1').setAttribute('visible', true)},2500);
-        <!--Sequence 2 end -->
-    </script>
 </body>
 
 </html>

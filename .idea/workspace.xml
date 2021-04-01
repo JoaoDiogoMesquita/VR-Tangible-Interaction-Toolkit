@@ -20,8 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e2de942-afd6-4bff-987c-d507bbc063ce" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 1/video.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 2/video.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/video.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/video.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 1/task1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Task Set 1/task1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 2/task2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Task Set 2/task2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 3/task3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/task3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Tasks.md" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Tasks.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +62,17 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 4" />
-      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 3" />
-      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 2" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 1" />
-      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 2" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 3" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Button\examples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 3" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Button\examples" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Swipe\examples" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Angle detector\examples" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Shake detector\examples" />
-      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Single_button\examples" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -100,7 +109,9 @@
       <workItem from="1617103841889" duration="1114000" />
       <workItem from="1617110654329" duration="10461000" />
       <workItem from="1617197233784" duration="14800000" />
-      <workItem from="1617214539747" duration="601000" />
+      <workItem from="1617214539747" duration="667000" />
+      <workItem from="1617275556241" duration="4058000" />
+      <workItem from="1617288665794" duration="5572000" />
     </task>
     <servers />
   </component>
@@ -124,6 +135,11 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="475" y="254" key="#Notifications/0.0.1440.860@0.0.1440.860" timestamp="1616757325730" />
+    <state x="463" y="196" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617289787813">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="439" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1617278530455" />
+    <state x="463" y="196" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1617289787813" />
     <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616278301856">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
