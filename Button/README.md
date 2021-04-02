@@ -3,17 +3,8 @@ A component that aims to give the user the possibility of a button interaction. 
 
 For [A-Frame](https://aframe.io).
 
-
-
-
-
 #
-
-
-
-
-
-### button
+### mt-button
 
 
 | Property | Description | Type | Default Value |

@@ -4,7 +4,7 @@ A component that aims to give the user the possibility of detect swipe movements
 For [A-Frame](https://aframe.io).
 
 #
-### swipe
+### mt-swipe
 
 
 | Property | Description | Type | Default Value |

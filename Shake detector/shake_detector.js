@@ -1,4 +1,4 @@
-AFRAME.registerComponent('shake-detector', {
+AFRAME.registerComponent('mt-shake-detector', {
   schema: {
     switchInterval : {type: 'int', default: 1000},
     minimumSwitchTimes : {type: 'int', default: 3},
@@ -10,7 +10,7 @@ AFRAME.registerComponent('shake-detector', {
 
 
   init: function (){
-    console.log("INITIALIZING SHAKE-DETECTOR COMPONENT : ", this.el )
+    console.log("Initializing mt-shake detector component");
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();
@@ -18,6 +18,7 @@ AFRAME.registerComponent('shake-detector', {
     this.switch = {lastSwitchTime : new THREE.Vector3(), switchCount : new THREE.Vector3() }
     this.movementDistance = new THREE.Vector3();
     this.minimumDistance = this.data.minimumDistance;
+    console.info("Debug mode set to ", this.data.debug)
   },
 
   tick: function (time) {

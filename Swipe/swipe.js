@@ -1,4 +1,4 @@
-AFRAME.registerComponent('swipe', {
+AFRAME.registerComponent('mt-swipe', {
 
     schema: {
         markers : {type: 'selectorAll'},
@@ -10,7 +10,7 @@ AFRAME.registerComponent('swipe', {
     },
 
     init: function () {
-        console.log("INITIALIZING SWIPE-DETECTOR COMPONENT\n")
+        console.log("Initializing mt-swipe component");
         this.maximumTime= this.data.maximumTime;
         this.hasReference = this.data.hasReference;
         this.sequences = []
@@ -29,9 +29,11 @@ AFRAME.registerComponent('swipe', {
             this.sequences.push(aux[i].split(' '))
         }
 
-        console.log('MARKERS --> ', this.markers)
-        console.log('SEQUENCES --> ', this.sequences)
-
+        console.info("Debug mode set to ", this.data.debug)
+        if (this.data.debug) {
+            console.log('Markers: ', this.markers)
+            console.log('Sequences: ', this.sequences)
+        }
     },
 
 

@@ -22,12 +22,12 @@
 
     <a-camera>
 
-      <a-marker id = 'ref' preset='kanji' button = "referenceMarker: #aux ; eventTargets: #box;" >
+      <a-marker id = 'ref' preset='kanji' mt-button = "referenceMarker: #aux ; eventTargets: #box;" >
         <a-cylinder color="orange" radius="0.3" height="0.2"></a-cylinder>
         <a-text allign = "center" width="1" value="Reference"></a-text>
       </a-marker>
 
-      <a-marker  id = 'aux' preset='hiro' button = "referenceMarker: #ref ; eventTargets: #box; ">
+      <a-marker  id = 'aux' preset='hiro' mt-button = "referenceMarker: #ref ; eventTargets: #box; ">
         <a-cylinder color="green" radius="0.3" height="0.2"></a-cylinder>
         <a-text allign = "center"  width="1" value="Click here"></a-text>
       </a-marker>

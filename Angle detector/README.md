@@ -3,7 +3,7 @@ A component that aims to give the user the possibility of attach the angle rotat
 
 For [A-Frame](https://aframe.io).
 
-### angle-detector
+### mt-angle-detector
 | Property | Description | Type | Default Value |
 | -------- | ----------------- | ---- |------------- |
 | threshold | An event will be emitted every time this threshold is reached . | float | 20    |

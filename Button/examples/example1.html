@@ -14,7 +14,7 @@
 
 <body>
 
-<a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+<a-scene arjs='sourceType: video; sourceUrl: ../video.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
   <a-entity environment="preset: japan;
                        dressing: torii;
@@ -22,19 +22,16 @@
                        dressingColor: red;
                        dressingScale: 10;"></a-entity>
 
-  <a-camera>
+
 
     <a-marker id = 'ref' preset='kanji'>
       <a-cylinder color="orange" radius="0.3" height="0.2"></a-cylinder>
-      <a-text allign = "center" width="1" value="Reference"></a-text>
     </a-marker>
 
-    <a-marker preset='hiro'  button = "referenceMarker: #ref ; eventTargets: #box;">
-      <a-cylinder color="green" radius="0.3" height="0.2"></a-cylinder>
-      <a-text allign = "center"  width="1" value="Click here"></a-text>
+    <a-marker preset='hiro' mt-button="referenceMarker: #ref ;eventTargets: #box">
+      <a-cylinder color="green" radius="0.3" height="0.2" ></a-cylinder>
     </a-marker>
 
-  </a-camera>
 
   <a-box id='box'
          position="3 0 -10"

@@ -1,4 +1,4 @@
-AFRAME.registerComponent('angle-detector', {
+AFRAME.registerComponent('mt-angle-detector', {
   schema: {
     threshold : {type: 'float', default: 20},
     eventTargets: {type: 'selectorAll'},
@@ -7,12 +7,13 @@ AFRAME.registerComponent('angle-detector', {
   },
 
   init: function () {
-    console.log("INITIALIZING ANGLE-DETECTOR COMPONENT")
+    console.log("Initializing mt-angle detector component");
     this.firstIteration = true;
     this.lastAngle = new THREE.Vector3();
     this.actualAngle= new THREE.Vector3();
     this.inputAngle = new THREE.Vector3();
     this.savedAngle = new THREE.Vector3();
+    console.info("Debug mode set to ", this.data.debug)
   },
 
 

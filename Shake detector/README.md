@@ -3,7 +3,7 @@ A component that aims to give the user the possibility of detect a shake movemen
 
 For [A-Frame](https://aframe.io). 
 #
-### shake-detector
+### mt-shake-detector
 
 | Property | Description | Type | Default Value |
 | -------- | ----------------- | ---- |------------- |
