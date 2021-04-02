@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e2de942-afd6-4bff-987c-d507bbc063ce" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 1/video.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 2/video.mp4" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/video.mp4" afterDir="false" />
@@ -30,6 +31,23 @@
       <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 3/task3.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Task Set 3/task3.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Task Set 4/task4.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Usability tests/Tasks.md" beforeDir="false" afterPath="$PROJECT_DIR$/Usability tests/Tasks.md" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/Button/video.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Angle detector/angle_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Angle detector/angle_detector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Button/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/Button/button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/examples/example1.html" beforeDir="false" afterPath="$PROJECT_DIR$/Button/examples/example1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Button/examples/example2.html" beforeDir="false" afterPath="$PROJECT_DIR$/Button/examples/example2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shake detector/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shake detector/shake_detector.js" beforeDir="false" afterPath="$PROJECT_DIR$/Shake detector/shake_detector.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Swipe/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Swipe/swipe.js" beforeDir="false" afterPath="$PROJECT_DIR$/Swipe/swipe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 1/shake_detector.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 2/button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 3/swipe.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Usability tests/Task Set 4/angle_detector.js" beforeDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,12 +73,17 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Usability tests/Task Set 4" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Button" />
+>>>>>>> Stashed changes
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< Updated upstream
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 4" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 1" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 2" />
@@ -74,6 +97,25 @@
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Angle detector\examples" />
       <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Shake detector\examples" />
     </key>
+=======
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Button" />
+      <recent name="D:\GitRepos\VR-Tangible-Interaction-Toolkit\Button\examples" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 4" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 1" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Button" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Button\examples" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Usability tests\Task Set 3" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Swipe\examples" />
+      <recent name="C:\Users\joaod\Desktop\tese\Components\VR-Tangible-Interaction-Toolkit\Angle detector\examples" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+>>>>>>> Stashed changes
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,6 +154,11 @@
       <workItem from="1617214539747" duration="667000" />
       <workItem from="1617275556241" duration="4058000" />
       <workItem from="1617288665794" duration="5572000" />
+<<<<<<< Updated upstream
+=======
+      <workItem from="1617298616552" duration="2555000" />
+      <workItem from="1617360076221" duration="1147000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -140,10 +187,10 @@
     </state>
     <state x="439" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1440.860@0.0.1366.728" timestamp="1617278530455" />
     <state x="463" y="196" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1440.860@0.0.1440.860" timestamp="1617289787813" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1616278301856">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617360890173">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1616278301856" />
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1617360890173" />
     <state x="430" y="219" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1615827311154">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
