@@ -1,5 +1,26 @@
 ## Task List
 
+_Comentários:_ 
+* _Tem de haver uma introdução que contextualize o teste de usabilidade no trabalho e clarifique o que se pretende que os participantes façam._
+* _Acho também que se devem definir perfis de participantes: e.g., com experiência de programação de componentes A-Frame, sem experiência de programação de componentes, mas com experiência de criação de experiências A-Frame, experiência com AR.js, sem experiência em A-Frame_
+* _O tutorial deve ser recomendado para os últimos_
+* _Necessário criar um questionário com perguntas demográficas para perceber os detalhes do participante (perfil, idade, nível de experiência com A-Frame, etc.)_
+* _As tarefas têm de ser repensadas. As tarefas não devem ser tutoriais passo a passo, deve ser colocado um desafio. Pense num exercício num exame. Não dizer como fazer, dizer apenas o que se pretende obter. Não deve dar os detalhes usando os nomes dos parâmetros, isso é facilitar demasiado_
+* _Sugiro ter duas tarefas por componente_
+* _Os videos das tarefas devem ser gravados na perspectiva de uso final: perspectiva smartphone_
+* _Acho que os vídeos podem ser apresentados juntamente com o próprio enunciado, para ajudar a perceber o que se pretende_
+* _A forma como o video é usado no código base deve ser explicado também_
+* _Necessário ser muito claro no tipo de feedback que se pretende:_
+  * _toda e qualquer dificuldade sentida, deve ser registada mesmo que o participante consiga resolver_
+  * _tempo aproximado para resolver cada conjunto de tarefas_
+  * _quantas tentativas fez para resolver o problema_
+  * _etc. (ver nos artigos se encontra outros tipos de feedback ou observações relevantes_
+* _A documentação oficial dos componentes tem de ser bem trabalhada_
+  * _Deve explicar bem o contexto de aplicação do compoente (interacção tangivel com marcadores)_
+  * _exemplos com vídeos: o tipo de videos que fez para o teste de usabilidade pode ser usado na documentação colocando lado a lado o vídeo dos gestos e a perspectiva virtual, por exemplo_
+* _acho que se deve já pensar em grande para o recrutamento dos participantes: pode-se convidar colegas, mas tentar sobretudo que participem pessoas com experiência em A-Frame divulgando nos grupos de A-Frame / WebVR no facebook, etc._
+ 
+
 [A-Frame Tutorial](Tutorial.md)
 
 ### Task Set 1 ([Shake Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Shake%20detector))
