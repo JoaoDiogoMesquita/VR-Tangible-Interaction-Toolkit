@@ -11,6 +11,9 @@ AFRAME.registerComponent('mt-swipe', {
 
     init: function () {
         console.log("Initializing mt-swipe component");
+    },
+
+    update: function(){
         this.maximumTime= this.data.maximumTime;
         this.hasReference = this.data.hasReference;
         this.sequences = []
@@ -22,20 +25,12 @@ AFRAME.registerComponent('mt-swipe', {
         for(let i=0; i < this.data.markers.length; i++){
             this.markers.push({id: i+1 , marker: this.data.markers[i] })
         }
-
-        //Structure sequences
-        var aux = this.data.sequences.split(',')
-        for(let i=0; i<aux.length; i++){
-            this.sequences.push(aux[i].split(' '))
-        }
-
         console.info("Debug mode set to ", this.data.debug)
         if (this.data.debug) {
             console.log('Markers: ', this.markers)
             console.log('Sequences: ', this.sequences)
         }
     },
-
 
 
     tick: function (time) {

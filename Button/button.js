@@ -1,33 +1,26 @@
-AFRAME.registerComponent('button', {
-
-  schema: {
-    reference: {type: 'selector'},
-    eventTargets: {type: 'selectorAll'},
-    minimumTime : {type: 'int', default: 1000},
-=======
 AFRAME.registerComponent('mt-button', {
   schema: {
     referenceMarker: {type: 'selector'},
     eventTargets: {type: 'selectorAll'},
     minimumTime : {type: 'int', default: 250},
->>>>>>> Stashed changes
     debug : {type: 'boolean', default: false}
   },
 
   init: function () {
-<<<<<<< Updated upstream
-    console.log("INITIALIZING BUTTON COMPONENT")
-=======
     console.log("Initializing mt-button component");
   },
 
   update: function() {
->>>>>>> Stashed changes
     this.button = this.el;
     this.reference = this.data.reference;
     this.pressed = false;
     this.timePressed = 0;
     this.minimumTime = this.data.minimumTime;
+    console.info("Debug mode set to ", this.data.debug)
+    if (this.data.debug) {
+      console.log('Reference: ', this.reference)
+      console.log('Button: ', this.button)
+    }
   },
 
 

@@ -8,6 +8,9 @@ AFRAME.registerComponent('mt-angle-detector', {
 
   init: function () {
     console.log("Initializing mt-angle detector component");
+  },
+
+  update: function(){
     this.firstIteration = true;
     this.lastAngle = new THREE.Vector3();
     this.actualAngle= new THREE.Vector3();
@@ -15,6 +18,7 @@ AFRAME.registerComponent('mt-angle-detector', {
     this.savedAngle = new THREE.Vector3();
     console.info("Debug mode set to ", this.data.debug)
   },
+
 
 
   tick: function (time) {

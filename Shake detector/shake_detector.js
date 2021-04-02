@@ -11,6 +11,9 @@ AFRAME.registerComponent('mt-shake-detector', {
 
   init: function (){
     console.log("Initializing mt-shake detector component");
+  },
+
+  update: function(){
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();
