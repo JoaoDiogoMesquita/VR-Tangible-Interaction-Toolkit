@@ -10,29 +10,29 @@
 </head>
 
 <body>
-    <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+    <a-scene arjs='sourceType: video; sourceUrl: ../images/video_swipe.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
+             mt-swipe = "markers:#my4,#my5,#my6; eventTargets: #box1; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: false; debug: false;"
+    >
 
         <a-camera>
 
-            <a-marker preset="hiro"  swipe = "markers:#my1,#my2,#my3; eventTargets: #box1, #box2 ; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: True; debug: True;">
-                <a-box id="reference" color="green" ></a-box>
+            <a-marker id="my4" type="barcode" value="4"  >
+                <a-box  color="blue" ></a-box>
             </a-marker>
 
-            <a-marker id="my2" type="barcode" value="2" >
+            <a-marker id="my5" type="barcode" value="5" >
                 <a-box color="red" ></a-box>
             </a-marker>
 
-            <a-marker id="my3" type="barcode" value="3" >
+            <a-marker id="my6" type="barcode" value="6" >
                 <a-box  color="yellow" ></a-box>
             </a-marker>
 
-            <a-marker id="my1" type="barcode" value="1"  >
-                <a-box  color="blue" ></a-box>
-            </a-marker>
+
         </a-camera>
 
 
-        <a-box id='box1' position="3 0 -10" color="yellow" event-set__event_swipe_1 ="color:red"></a-box>
+        <a-box id='box1' position="-3 0 -10" color="yellow" event-set__event_swipe ="color:red"></a-box>
 
     </a-scene>
 </body>

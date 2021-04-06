@@ -14,22 +14,14 @@
 
 <body>
 
-<a-scene arjs='sourceType: video; sourceUrl: ../video.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+<a-scene arjs='sourceType: video; sourceUrl: ../images/button_video.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
-  <a-entity environment="preset: japan;
-                       dressing: torii;
-                       dressingAmount: 20;
-                       dressingColor: red;
-                       dressingScale: 10;"></a-entity>
-
-
-
-    <a-marker id = 'ref' preset='kanji'>
-      <a-cylinder color="orange" radius="0.3" height="0.2"></a-cylinder>
+    <a-marker id = 'ref' preset='kanji' >
+      <a-cylinder color="orange" position='0 0 2' radius="0.3" height="0.2"></a-cylinder>
     </a-marker>
 
-    <a-marker preset='hiro' mt-button="referenceMarker: #ref ;eventTargets: #box">
-      <a-cylinder color="green" radius="0.3" height="0.2" ></a-cylinder>
+    <a-marker preset='hiro' mt-button="referenceMarker: #ref ;eventTargets: #box; minimumTime: 100; debug: true;">
+      <a-cylinder color="green" position='0 0 -2' radius="0.3" height="0.2" ></a-cylinder>
     </a-marker>
 
 

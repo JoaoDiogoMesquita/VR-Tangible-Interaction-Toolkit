@@ -25,6 +25,13 @@ AFRAME.registerComponent('mt-swipe', {
         for(let i=0; i < this.data.markers.length; i++){
             this.markers.push({id: i+1 , marker: this.data.markers[i] })
         }
+
+        //Structure sequences
+        var aux = this.data.sequences.split(',')
+        for(let i=0; i<aux.length; i++){
+            this.sequences.push(aux[i].split(' '))
+        }
+
         console.info("Debug mode set to ", this.data.debug)
         if (this.data.debug) {
             console.log('Markers: ', this.markers)

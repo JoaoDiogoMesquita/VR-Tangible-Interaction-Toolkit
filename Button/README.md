@@ -1,7 +1,17 @@
 # Button Component
+For [A-Frame](https://aframe.io).
+
 A component that aims to give the user the possibility of a button interaction. The systems record in real time the visibility of the reference and auxiliary markers and emit an event to the reference marker (or additional targets) every time the auxiliary marker is occult for time defined by the user.
 
-For [A-Frame](https://aframe.io).
+In the following set of images of [example 1](examples/example1.html), when the marker with the green cylinder is clicked, an event is emmited, and the red cube turn green.
+
+||||
+|------------|-------------|---------|
+| ![](images/button1.PNG) | ![](images/button2.PNG)  | ![](images/button3.PNG)  |
+
+
+
+
 
 #
 ### mt-button
@@ -20,8 +30,6 @@ For [A-Frame](https://aframe.io).
 
 
 
-
-
 ### How to use
 
 
@@ -29,15 +37,16 @@ The component can be attached to a reference  marker object like in the followin
 
 
 ```html
-<a-marker  preset='kanji' id = 'Ref'>
-    <a-sphere color="red" radius="0.5"></a-sphere>
-</a-marker>
+ <a-marker id = 'ref' preset='kanji' >
+      <a-cylinder color="orange" position='0 0 2' radius="0.3" height="0.2"></a-cylinder>
+    </a-marker>
 
-<a-marker preset='hiro'  button = "referenceMarker: #Ref ; targets: #box; minimumTime : 1500 ; debug: false ; ">
-    <a-sphere color="yellow" radius="0.5"></a-sphere>
-</a-marker>
+    <a-marker preset='hiro' mt-button="referenceMarker: #ref ;eventTargets: #box; minimumTime: 100; debug: true;">
+      <a-cylinder color="green" position='0 0 -2' radius="0.3" height="0.2" ></a-cylinder>
+    </a-marker>
 
-<a-box id="'box"></a-box>
+
+  <a-box id='box' position="3 0 -10" color="red" event-set__event_button_pressed="color:green"> </a-box>
 ```
 
 

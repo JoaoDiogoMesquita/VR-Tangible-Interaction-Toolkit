@@ -1,7 +1,15 @@
 # Swipe Detector Component
+For [A-Frame](https://aframe.io).
+
 A component that aims to give the user the possibility of detect swipe movements in a set of fiducial markers. The systems record in real time the occlusion of those markers and emit an event to the object where the component's attached (or additional targets) every time a sequence is detected.
 
-For [A-Frame](https://aframe.io).
+In the following set of images of [example 1](examples/example1.html) the sequence to detect was blue, red and then yellow cube. When the sequence was detected an event was emitted to the yellow box that turned red.
+
+|||||
+|------------|-------------|---------|---------|
+| ![](images/swipe1.PNG) | ![](images/swipe2.PNG)  | ![](images/swipe3.PNG)  | ![](images/swipe4.PNG)  |
+
+
 
 #
 ### mt-swipe
@@ -40,7 +48,7 @@ With reference:
 ```
 Without reference:
 ```html
-<a-marker id="my1" type="barcode" value="1"  swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;>
+<a-marker id="my1" type="barcode" value="1"  swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
     <a-box  color="blue" ></a-box>
 </a-marker>
 
@@ -51,8 +59,23 @@ Without reference:
     <a-box color="red" ></a-box>
 </a-marker>
 
-
 </a-marker>
+```
+
+```html
+<a-scene swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
+    <a-marker id="my1" type="barcode" value="1">
+        <a-box  color="blue" ></a-box>
+    </a-marker>
+    
+    <a-marker id="my3" type="barcode" value="3" >
+        <a-box  color="yellow" ></a-box>
+    
+    <a-marker id="my2" type="barcode" value="2" >
+        <a-box color="red" ></a-box>
+    </a-marker>
+    
+</a-scene>
 ```
 #### NOTE 
 The order of the sequence is made with the order that the markers are in the HMTL file. 

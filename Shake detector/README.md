@@ -1,7 +1,15 @@
 # A-Frame Shake Detector Component
+For [A-Frame](https://aframe.io). 
+
 A component that aims to give the user the possibility of detect a shake movement of an object. The systems record in real time the positions in the chosen axes and emit an event to the object (or additional targets) every time the interaction is detected according to the specification given by the user.
 
-For [A-Frame](https://aframe.io). 
+In the following set of images of [example 1](examples/example1.html), the marker with the blue sphere is shaking in the z axis, and an event is emitted to turn the yellow into red.
+
+|||||
+|------------|-------------|---------|---------|
+| ![](images/shake1.PNG) | ![](images/shake2.PNG)  | ![](images/shake3.PNG)  |![](images/shake4.PNG)  |
+
+
 #
 ### mt-shake-detector
 

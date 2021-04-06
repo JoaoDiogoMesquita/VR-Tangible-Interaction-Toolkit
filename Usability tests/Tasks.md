@@ -1,7 +1,17 @@
-## Task List
+# Usability Test
 
-[A-Frame Tutorial](Tutorial.md)
+## Introduction
+The main goal of this session is to evaluate the usability of 4 components that are part of a programmatic toolkit that aims to assist the development of virtual reality content. These tests intend to evaluate these components in terms of understandability, abstraction, reusability and learnability. 
+For that I ask you to record three things:
+- the time spent on each task
+- how many different attempts at each task 
+- any difficulties encountered (even if you can solve it)
 
+In the tasks the environment has been set up to play VR experiences with markers automatically through a video, so you just have to program the experience to detect the interactions being made in the video. The experiment will be explained in each of the tasks.
+You're welcome to leave comments in the code or indications of the three points mentioned above (time,attemps and dificulties).
+If you have no experience with the A-Frame framework, I would first recommend that you go through the [tutorial](Tutorial.md) that has been prepared with the basics.
+After you finished, please send your code via email to: jmesquita@student.dei.uc.pt
+#
 ### Task Set 1 ([Shake Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Shake%20detector))
 
 - Run the HMTL code and explore the environment.

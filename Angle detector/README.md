@@ -1,7 +1,15 @@
 # Angle Detector Component
+For [A-Frame](https://aframe.io).
+
 A component that aims to give the user the possibility of attach the angle rotation of a virtual object to a variable. The systems record in real time the angle in a chosen axis and emit an event to the rotating object (or additional targets) every time the rotations passes the input threshold.
 
-For [A-Frame](https://aframe.io).
+In the following set of images of [example 2](examples/example2.html), when the marker with the red cube rotate 45º, an event is emitted, and the yellow cube turn red.
+
+|||
+|------------|-------------|
+| ![](images/rotate1.PNG) | ![](images/rotate2.PNG)  | 
+
+
 
 ### mt-angle-detector
 | Property | Description | Type | Default Value |

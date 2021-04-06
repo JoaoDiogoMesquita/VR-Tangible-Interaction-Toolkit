@@ -12,7 +12,7 @@ AFRAME.registerComponent('mt-button', {
 
   update: function() {
     this.button = this.el;
-    this.reference = this.data.reference;
+    this.reference = this.data.referenceMarker;
     this.pressed = false;
     this.timePressed = 0;
     this.minimumTime = this.data.minimumTime;
