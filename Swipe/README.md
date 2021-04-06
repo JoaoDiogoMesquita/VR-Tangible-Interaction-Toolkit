@@ -1,7 +1,9 @@
 # Swipe Detector Component
 For [A-Frame](https://aframe.io).
 
-A component that aims to give the user the possibility of detect swipe movements in a set of fiducial markers. The systems record in real time the occlusion of those markers and emit an event to the object where the component's attached (or additional targets) every time a sequence is detected.
+A part of the [VR Tangible Interaction Toolkit](../), a family of components that aims to facilitate the programing of VR interactions with fiducial markers.
+
+This component aims to give the user the possibility of detect swipe movements in a set of fiducial markers. The systems record in real time the occlusion of those markers and emit an event to the object where the component's attached (or additional targets) every time a sequence is detected.
 
 In the following set of images of [example 1](examples/example1.html) the sequence to detect was blue, red and then yellow cube. When the sequence was detected an event was emitted to the yellow box that turned red.
 

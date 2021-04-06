@@ -1,7 +1,9 @@
 # Button Component
 For [A-Frame](https://aframe.io).
 
-A component that aims to give the user the possibility of a button interaction. The systems record in real time the visibility of the reference and auxiliary markers and emit an event to the reference marker (or additional targets) every time the auxiliary marker is occult for time defined by the user.
+A part of the [VR Tangible Interaction Toolkit](../), a family of components that aims to facilitate the programing of VR interactions with fiducial markers.
+
+that aims to give the user the possibility of a button interaction. The systems record in real time the visibility of the reference and auxiliary markers and emit an event to the reference marker (or additional targets) every time the auxiliary marker is occult for time defined by the user.
 
 In the following set of images of [example 1](examples/example1.html), when the marker with the green cylinder is clicked, an event is emmited, and the red cube turn green.
 
