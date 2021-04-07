@@ -60,10 +60,6 @@ AFRAME.registerComponent('mt-shake-detector', {
             //Record when the movement started to verify the time frame later in the next switch
             this.switch.lastSwitchTime[elem] = time;
           }
-          else{
-            if(this.data.debug)
-              console.log('Distance OK => ', Math.abs(this.movementDistance[elem]),  ' < ', this.minimumDistance)
-          }
         }
         //If direction still the same just increment variable
         else{
