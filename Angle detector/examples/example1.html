@@ -2,21 +2,27 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Angle Detector</title>
+  <title>Angle Example 1</title>
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
   <script src="../angle_detector.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
 </head>
 
 <body>
 <a-scene >
-  <a-box position="1 0 -10" rotation="0 0 0" color="blue"
+  <a-entity id = "env";
+            environment ="preset: japan;dressing: torii;  dressingAmount: 20; dressingColor: red; dressingScale: 10;">
+  </a-entity>
+
+  <a-box position="-2 2 -10" rotation="0 0 0" color="blue"
          animation="property: rotation;  to: 0 0 180 ; dur : 1000;"
-         angle_detector = "threshold: 20; eventTargets: #box ; axis:z; debug:True;">
+         mt-angle-detector = "threshold: 45; eventTargets: #box ; axis:z; debug:True;">
   </a-box>
 
-  <a-box id='box' position="3 0 -10" color="yellow" event-set__rotation_event = "color:red"></a-box>
+  <a-box id='box' position="2 2 -10" color="yellow" event-set__rotation_event = "color:red"></a-box>
 
 </a-scene>
 </body>

@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Swipe Component</title>
+    <title>Swipe Example 1</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
@@ -10,9 +10,8 @@
 </head>
 
 <body>
-    <a-scene arjs='sourceType: video; sourceUrl: ../images/video_swipe.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
-             mt-swipe = "markers:#my4,#my5,#my6; eventTargets: #box1; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: false; debug: false;"
-    >
+    <a-scene arjs='sourceType: video; sourceUrl: ../images/swipe_video.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
+             mt-swipe = "markers:#my4,#my5,#my6; eventTargets: #box1; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: false; debug: true;">
 
         <a-camera>
 
