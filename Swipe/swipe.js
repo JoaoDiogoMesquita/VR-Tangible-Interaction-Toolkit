@@ -54,7 +54,7 @@ AFRAME.registerComponent('mt-swipe', {
                     this.covered.push(newCovered)
                     this.lastCovered = newCovered
                     if(this.data.debug)
-                        console.log(this.covered)
+                        console.debug(this.covered.map(x => x.id))
                 }
             }.bind(this))
 
@@ -94,14 +94,14 @@ AFRAME.registerComponent('mt-swipe', {
 
                         this.el.dispatchEvent(event_swipe)
                         if(this.data.debug)
-                            console.log('event_swipe' + event_swipe)
+                            console.debug('event_swipe', event_swipe)
 
                         this.data.eventTargets.forEach(function (target) {
 
                             target.dispatchEvent(event_swipe)
 
                             if(this.data.debug)
-                                console.log('event_swipe' + event_swipe)
+                                console.debug('event_swipe', event_swipe)
 
 
                         }.bind(this))

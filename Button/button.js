@@ -24,6 +24,7 @@ AFRAME.registerComponent('mt-button', {
   },
 
 
+
   tick: function (time) {
     if (this.button != null && this.reference != null && this.reference.object3D.visible) {
 
@@ -61,9 +62,14 @@ AFRAME.registerComponent('mt-button', {
             console.log('Emitting event: Button pressed   Time: ', time, '    Object: ', this.el , '    Target: ', target   );
           }.bind(this))
         }
-
+        else {
+          if (this.data.debug) {
+            console.debug("Minimum time not reached.");
+          }
+        }
         this.pressed = false;
       }
+
     }
   }
 });
