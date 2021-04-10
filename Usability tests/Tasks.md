@@ -1,28 +1,18 @@
 # Usability Test
 
-* _a documentação dos componentes deveria ser melhor afinada:_
-  * _readme geral para a família de componentes_
-  * _gifs animados da imagem da camara em conjunto com a imagem virtual_
-  * _exemplos live também_ 
-* ~~mencionar interacção tangivel com marcadores~~ 
-* _falta questionário_ 
-  * _idealmente a submissao do código seria também pelo questionário_
-  * _questionario do jose: https://docs.google.com/forms/d/1wb5R3FwZJWhEwEEZrrkjcZg1mIYwnfkz1iErAP0EMrA/edit_ (precisa de ser revisto...)
-    * _pedir perfil (idade, profissao, experiencia de programacao, anos de experiencia com a-Frame, quantas experiencias A-Frame criou, quantos componentes custom já escreveu)_
-* pensar tb em reviews: https://link.springer.com/chapter/10.1007%2F978-3-642-34347-6_10
   
   
 ## Introduction
 The main goal of this test is to evaluate the usability of four A-Frame components that are part of a programmatic toolkit that aims to assist the development of marker-based tangible interaction in virtual reality. The goal is to make improvements to these components to make them easier to use by programmers.
 
-The A-Frame components that are being evaluated are documented at https://github.io/sdfsdfds
+The A-Frame components that are being evaluated are documented at [https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit)
 
 The test consists of a number of programming tasks that you should solve using the A-Frame components that are mentioned in each task. For each task, an HTML file has been prepared with the basic A-Frame scene. In addition, the scene is already configured with a simulation of the interaction: it has been set up to play videos of a user interacting with a marker-based object, so you just have to program the experience to detect the interactions being made in the video. 
 
 While you are solving the tasks, we ask you to record three things:
 - the time spent on each task (roughly)
 - how many different attempts at each task (how many different approaches you tried before getting it right) 
-- any difficulties encountered (even if you solved the task, report __anything__ that caused you to revise your code - misspelled a parameter name, misunderstood the meaning of a parameter, forgot including &lt;script&gt;, etc.)
+- any difficulties encountered (even if you solved the task, report anything that caused you to revise your code - misspelled a parameter name, misunderstood the meaning of a parameter, forgot including &lt;script&gt;, etc.)
 
 We ask that you leave comments in the code indicating the three points mentioned above (time, attempts and difficulties), or anything else you feel could be useful to improve the A-Frame components.
 
@@ -33,23 +23,15 @@ If you have no experience with the A-Frame framework, I would first recommend th
 
 If you don't have experience in writing custom A-Frame components, you may wish to solve only the first task in each task set below.
 
-When you finish implementing the following tasks, please fill in the questionnaire available at: https://questionario.com . This questionnaire will allow us to understand your perspective regarding the understandability, abstraction, readability, and learnability of the A-Frame components. It will also allow you to submit your code with the resolution of the programming tasks.
+When you finish implementing the following tasks, please fill in the questionnaire available at this [link](https://docs.google.com/forms/d/e/1FAIpQLSdms9-KCEabZDyMNZmS4afQf8D_5sfwgyNIqRmgVggeELDwMQ/viewform?usp=sf_link) . This questionnaire will allow us to understand your perspective regarding the understandability, abstraction, readability, and learnability of the A-Frame components. It will also allow you to submit your code with the resolution of the programming tasks.
 
 
 #
 ## Task Set 1 ([Shake Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Shake%20detector))
 
-* _ter ficheiros HTML diferentes para cada task_
-* _não incluir o JavaScript do componentes necessários à resolução (shake, event-set, etc.)_
-* _especificar valores nas tasks_
-  * _"shaking" -> "shaking back and forth only"_
-  * _"...different color" -> "red"_
-  * ser mais específico no que a solução deve obter e __não__ deve obter (reagir a shake na direcção x, mas não na direcção y) 
-  * _ter mais vídeos com movimentos que devem ser detectados e movimentos que não devem ser detectados_
-  * _deixei no task_set1.html um exemplo de como o programador pode facilmente trocar o video de teste para verificar se a sua solução está certa. Na descrição das tasks, pode mesmo mencionar os nomes dos videos para explicar o que deve funcionar e o que não deve_
 ###Task 1:
 
-Use the Shake Detector component to detect the marker/box shaking and turn the element with the ID "sphere1" into a different color.
+Use the Shake Detector component to detect the marker/box shaking and turn the element with the ID "sphere1" into blue.
 
 ###Task 2:
 Detect the marker/box shaking and:
@@ -64,7 +46,7 @@ Note: The code is already prepared to make the object 'box1' shake.
 ### Task Set 2 ([Button Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Button))
 
 ###Task 1:
-Use Button component to detect the click and use the event to change the color of the object 'box'.
+Use Button component to detect the click and use the event to change the color of the object 'box' into blue.
 
 ###Task 2:
 Use Button component to detect the click and use the event to change the [environment](https://www.npmjs.com/package/aframe-environment-component) to 'egypt' preset.
@@ -83,15 +65,14 @@ Use the Swipe without reference to detect the sequence (my1, my2, my3) and chang
 Change the parameters to use sphere1 as reference and detect the sequence (my, my2). With the event, add some value to the coordinates of sphere1. 
 
 - Code: [Task Set 3](Task Set 3)
-- Note: The code is already prepared to do a sequence in 3 markers.
+
 #
 ### Task Set 4 ([Angle Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Angle%20detector))
 
 ###Task 1:
-Use Angle Detector component to detect a rotation of 20º in Y axis and use it to change the change the color of sphere1.
+Use Angle Detector component to detect a rotation of 20º in Y axis and use it to change the color of sphere1 to blue.
 
 ###Task 2:
 When the rotation is negative it give it a different color than when it is positive.
 
 - Code: [Task Set 4](Task Set 4)
-- Note: The code is already prepared to make a the 'box1' rotate 180º in z axis. 
