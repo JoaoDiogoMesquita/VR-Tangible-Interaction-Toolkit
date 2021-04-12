@@ -15,6 +15,9 @@
 <body>
 
 <a-scene arjs='sourceType: video; sourceUrl: ../images/button_video.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+    <a-entity id = "env";
+              environment ="preset: default; dressing: torii;  dressingAmount: 20; dressingColor: red; dressingScale: 10;">
+    </a-entity>
 
     <a-marker id = 'ref' preset='kanji' >
       <a-cylinder color="orange" position='0 0 2' radius="0.3" height="0.2"></a-cylinder>
@@ -27,11 +30,23 @@
 
   <a-box id='box'
          position="3 0 -10"
-         color="red"
-         event-set__event_button_pressed="color:green">
+         color="red">
   </a-box>
 
 </a-scene>
+
+<script>
+    let box = document.getElementById('box');
+    box.addEventListener("event_button_pressed", function(e){
+        if(box.getAttribute("color") == "red"){
+            box.setAttribute("color", "yellow")
+        }
+        else{
+            box.setAttribute("color", "red")
+        }
+    })
+</script>
+
 </body>
 
 </html>
