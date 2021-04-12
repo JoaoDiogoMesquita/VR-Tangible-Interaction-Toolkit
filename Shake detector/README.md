@@ -7,9 +7,9 @@ This component aims to give the user the possibility of detect a shake movement 
 
 In the following set of images of [example 1](examples/example1.html), the marker with the blue sphere is shaking in the z axis, and an event is emitted to turn the yellow into red.
 
-|||||
-|------------|-------------|---------|---------|
-| ![](images/shake1.PNG) | ![](images/shake2.PNG)  | ![](images/shake3.PNG)  |![](images/shake4.PNG)  |
+|||
+|------------|-------------|
+|![](images/shake_gif.gif) |  ![](images/shake_gif_vr.gif) | 
 
 
 #

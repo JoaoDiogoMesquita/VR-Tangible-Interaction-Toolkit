@@ -9,7 +9,7 @@ In the following set of images of [example 2](examples/example2.html), when the 
 
 |||
 |------------|-------------|
-| ![](images/rotate1.PNG) | ![](images/rotate2.PNG)  | 
+| ![](images/rotate.gif) | ![](images/rotate_vr.gif)  | 
 
 
 

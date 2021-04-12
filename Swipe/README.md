@@ -7,9 +7,9 @@ This component aims to give the user the possibility of detect swipe movements i
 
 In the following set of images of [example 1](examples/example1.html) the sequence to detect was blue, red and then yellow cube. When the sequence was detected an event was emitted to the yellow box that turned red.
 
-|||||
-|------------|-------------|---------|---------|
-| ![](images/swipe1.PNG) | ![](images/swipe2.PNG)  | ![](images/swipe3.PNG)  | ![](images/swipe4.PNG)  |
+|||
+|------------|-------------|
+|![](images/swipe.gif) |  ![](images/swipe_vr.gif) | 
 
 
 

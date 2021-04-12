@@ -7,9 +7,11 @@ that aims to give the user the possibility of a button interaction. The systems 
 
 In the following set of images of [example 1](examples/example1.html), when the marker with the green cylinder is clicked, an event is emmited, and the red cube turn green.
 
-||||
-|------------|-------------|---------|
-| ![](images/button1.PNG) | ![](images/button2.PNG)  | ![](images/button3.PNG)  |
+|||
+|------------|-------------|
+|![](images/gif.gif) |  ![](images/gif_vr.gif) | 
+
+
 
 
 

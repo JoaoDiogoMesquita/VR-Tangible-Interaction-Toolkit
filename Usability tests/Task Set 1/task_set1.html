@@ -13,7 +13,7 @@
 </head>
 
   <body>
-    <a-scene arjs="sourceType: video; sourceUrl: video1.mp4">
+    <a-scene arjs="sourceType: video; sourceUrl: video_front_back.mp4">
 
       <!--Environment setup -->
       <a-entity id = 'env' environment="preset: goldmine;
@@ -23,27 +23,28 @@
                            dressingScale: 1">
       </a-entity>
 
-      <!-- Insert your code in this area -->
-      <a-marker id="marker1" preset = 'kanji' >
-        <a-box height="1" position = '0 0 2'width="1"  color="red"></a-box>
-      </a-marker>
-
+      <a-camera>
+        <!-- Insert your code in this area -->
+        <a-marker id="marker1" preset = 'kanji' >
+          <a-box height="0.5" width="0.5"  color="red"></a-box>
+        </a-marker>
+      </a-camera>
       <a-sphere id = 'sphere1' position = '5 2 -10' color="blue" ></a-sphere>
       <!-- -- -->
 
     </a-scene>
 
     <select  id="sourceVideos" style="position:absolute; top: 100px; left: 100px">
-      <option value="video1">Shake front/back</option>
-      <option value="video2">Shake left/right</option>
-      <option value="video3">Shake top/bottom</option>
+      <option value="video_front_back">Shake front/back</option>
+      <option value="video_left_right">Shake left/right</option>
+      <option value="video_up_down">Shake top/bottom</option>
     </select>
-  <script>
-    let select = document.querySelector("#sourceVideos");
-    select.addEventListener("change", function(evt) {
-      document.querySelector("video").src = select.value+".mp4";
-    })
-  </script>
+    <script>
+      let select = document.querySelector("#sourceVideos");
+      select.addEventListener("change", function(evt) {
+        document.querySelector("video").src = select.value+".mp4";
+      })
+    </script>
   </body>
 </html>
 

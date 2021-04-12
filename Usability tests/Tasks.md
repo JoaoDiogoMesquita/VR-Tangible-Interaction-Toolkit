@@ -23,7 +23,7 @@ If you have no experience with the A-Frame framework, I would first recommend th
 
 If you don't have experience in writing custom A-Frame components, you may wish to solve only the first task in each task set below.
 
-When you finish implementing the following tasks, please fill in the questionnaire available at this [link](https://docs.google.com/forms/d/e/1FAIpQLSdms9-KCEabZDyMNZmS4afQf8D_5sfwgyNIqRmgVggeELDwMQ/viewform?usp=sf_link) . This questionnaire will allow us to understand your perspective regarding the understandability, abstraction, readability, and learnability of the A-Frame components. It will also allow you to submit your code with the resolution of the programming tasks.
+When you finish implementing the following tasks, please fill in the questionnaire available at this [link](https://docs.google.com/forms/d/e/1FAIpQLSdms9-KCEabZDyMNZmS4afQf8D_5sfwgyNIqRmgVggeELDwMQ/viewform?usp=sf_link) . 
 
 
 #

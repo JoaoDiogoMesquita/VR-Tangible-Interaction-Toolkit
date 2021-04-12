@@ -10,19 +10,28 @@
 </head>
 
 <body>
-<a-scene arjs= 'sourceType: video; sourceUrl: ../images/video_shake.mp4;' >
+<a-scene arjs= 'sourceType: video; sourceUrl: ../images/video_front_back.mp4;' >
 
-  <a-camera>
-    <a-marker preset = 'kanji'  mt-shake-detector = "switchInterval: 1000 ; minimumSwitchTimes: 2 ; minimumDistance: 1.3 ; eventTargets:#box; axis:z ; debug: true;">
-      <a-sphere color="blue" radius="0.5"></a-sphere>
-    </a-marker>
-
+    <a-camera>
+        <a-marker preset = 'kanji'  mt-shake-detector = "switchInterval: 2000 ; minimumSwitchTimes: 2 ; minimumDistance: 1 ; eventTargets:#box; axis:x,y,z ; debug: true;">
+          <a-sphere color="blue" radius="0.5"></a-sphere>
+        </a-marker>
+    </a-camera>
     <a-box position="-3 0 -10" color = "yellow" id = "box" event-set__event_shake = "color:red " ></a-box>
 
 
-  </a-camera>
-
 </a-scene>
+<select  id="sourceVideos" style="position:absolute; top: 100px; left: 100px">
+    <option value="../images/video_front_back">Shake front/back</option>
+    <option value="../images/video_left_right">Shake left/right</option>
+    <option value="../images/video_up_down">Shake top/bottom</option>
+</select>
+<script>
+    let select = document.querySelector("#sourceVideos");
+    select.addEventListener("change", function(evt) {
+        document.querySelector("video").src = select.value+".mp4";
+    })
+</script>
 </body>
 </html>
 
