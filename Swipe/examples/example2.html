@@ -12,24 +12,24 @@
 </head>
 
 <body>
-    <a-scene arjs='sourceType: video; sourceUrl: ../images/swipe_video.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+    <a-scene arjs='sourceType: video; sourceUrl: ../images/swipe_right.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
         <a-entity id = 'env' environment="preset: default;"></a-entity>
 
         <a-camera>
 
-            <a-marker preset="hiro"  mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box, #env; sequences:1 2 3,3 2 1; maximumTime: 4000; hasReference: false; debug: True;">
+            <a-marker preset="hiro"  mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box, #env; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: true; debug: True;">
                 <a-box id="reference" color="green" height = 0.05></a-box>
             </a-marker>
 
-            <a-marker id="my1" type="barcode" value="4"  >
+            <a-marker id="my1" type="barcode" value="1"  >
                 <a-box  color="blue" height = 0.05></a-box>
             </a-marker>
 
-            <a-marker id="my2" type="barcode" value="5" >
+            <a-marker id="my2" type="barcode" value="2" >
                 <a-box color="red" height = 0.05></a-box>
             </a-marker>
 
-            <a-marker id="my3" type="barcode" value="6" >
+            <a-marker id="my3" type="barcode" value="3" >
                 <a-box  color="yellow" height = 0.05></a-box>
             </a-marker>
 
@@ -39,8 +39,15 @@
         <a-box id='box' position="3 0 -10" color="yellow" event-set__event_swipe ="color:red"></a-box>
 
     </a-scene>
-
+    <select  id="sourceVideos" style="position:absolute; top: 100px; left: 100px">
+        <option value="../images/swipe_right">Swipe right</option>
+        <option value="../images/swipe_left">Swipe left</option>
+    </select>
     <script>
+        let select = document.querySelector("#sourceVideos");
+        select.addEventListener("change", function(evt) {
+            document.querySelector("video").src = select.value+".mp4";
+        })
         let env = document.getElementById('env')
         var index = 0;
         let envs = ['contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris']

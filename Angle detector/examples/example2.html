@@ -13,36 +13,24 @@
 <body>
 <a-scene arjs='sourceType: video; sourceUrl: ../images/video_rotate.mp4;' >
   <a-light id="ambientLight" intensity= 1; type="ambient" color="#BBB" > </a-light>
+  <a-entity id = "env"; environment ="preset: default;dressing: torii;  dressingAmount: 20; dressingColor: red; dressingScale: 10;"></a-entity>
 
   <a-camera>
-    <a-marker preset = 'kanji'  mt-angle-detector = "threshold: 45; eventTargets: #box,#ambientLight; axis:y;">
+    <a-marker preset = 'kanji'  mt-angle-detector = "threshold: 20; eventTargets: #box, #ambientLight; axis:y;">
       <a-box color="red" radius="0.5"></a-box>
     </a-marker>
   </a-camera>
 
-  <a-box id='box' position="3 0 -10" color="yellow" event-set__rotation_event ="color:red"></a-box>
+  <a-box id='box' position="3 0 -10" color="yellow" event-set__event_rotation ="color:blue"></a-box>
 
 </a-scene>
 
 <script>
   let light = document.getElementById('ambientLight')
-  light.addEventListener('rotation_event', e=> {
+  light.addEventListener('event_rotation', e=> {
     var intensity = parseFloat(light.getAttribute('intensity'))
-
-    if(e.detail.direction == 'positive'){
-      if(intensity < 1) {
-        intensity += 0.1;
-        light.setAttribute('intensity', intensity)
-      }
-    }
-    else if(e.detail.direction == 'negative'){
-      if(intensity > 0) {
-        intensity -= 0.1;
-        light.setAttribute('intensity', intensity)
-      }
-    }
-    console.log(light.getAttribute('intensity'))
-
+      intensity -= 0.1;
+      light.setAttribute('intensity', intensity)
   });
 </script>
 </body>

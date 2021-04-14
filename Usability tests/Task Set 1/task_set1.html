@@ -7,9 +7,11 @@
 
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 
-  <script>
+  <!-- Insert your code in this area -->
+  <script></script>
+  <!--  -->
 
-  </script>
+
 </head>
 
   <body>
@@ -22,6 +24,7 @@
                            dressingColor: orange;
                            dressingScale: 1">
       </a-entity>
+      <!--  -->
 
       <a-camera>
         <!-- Insert your code in this area -->
@@ -29,6 +32,7 @@
           <a-box height="0.5" width="0.5"  color="red"></a-box>
         </a-marker>
       </a-camera>
+
       <a-sphere id = 'sphere1' position = '5 2 -10' color="blue" ></a-sphere>
       <!-- -- -->
 
@@ -39,12 +43,15 @@
       <option value="video_left_right">Shake left/right</option>
       <option value="video_up_down">Shake top/bottom</option>
     </select>
+
     <script>
+      //Mudança da animação
       let select = document.querySelector("#sourceVideos");
       select.addEventListener("change", function(evt) {
         document.querySelector("video").src = select.value+".mp4";
       })
     </script>
+
   </body>
 </html>
 

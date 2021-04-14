@@ -35,8 +35,8 @@ Use the Shake Detector component to detect the marker/box shaking and turn the e
 
 ###Task 2:
 Detect the marker/box shaking and:
- * move the sphere 10 cm to the right each time the box is shaken horizontally (left/right, but not front/back)
- * move the sphere 10 cm up each time the box is shaken vertically.
+ * move the sphere1 10 distance units to the right each time the box is shaken horizontally (left/right, but not front/back)
+ * move the sphere1 10 distance units up each time the box is shaken vertically.
 
 Code: [Task Set 1](Task Set 1)
 
@@ -52,7 +52,6 @@ Use Button component to detect the click and use the event to change the color o
 Use Button component to detect the click and use the event to change the [environment](https://www.npmjs.com/package/aframe-environment-component) to 'egypt' preset.
 
 
-
 - Code: [Task Set 2](Task Set 2)
 - Note: The code is already prepared to make the object 'button' clicked. 
 #
@@ -62,7 +61,7 @@ Use Button component to detect the click and use the event to change the [enviro
 Use the Swipe without reference to detect the sequence (my1, my2, my3) and change the color of sphere1.
 
 ###Task 2:
-Change the parameters to use sphere1 as reference and detect the sequence (my, my2). With the event, add some value to the coordinates of sphere1. 
+Change the parameters to use sphere1 as reference and detect the sequence (my3,my2,my1). With the event, add 3 distance units to the coordinate X of sphere1. 
 
 - Code: [Task Set 3](Task Set 3)
 
@@ -73,6 +72,6 @@ Change the parameters to use sphere1 as reference and detect the sequence (my, m
 Use Angle Detector component to detect a rotation of 20º in Y axis and use it to change the color of sphere1 to blue.
 
 ###Task 2:
-When the rotation is negative it give it a different color than when it is positive.
+Add the behaviour detection on the X axis with the same angle but this time, this detection must change the color back to red.
 
 - Code: [Task Set 4](Task Set 4)

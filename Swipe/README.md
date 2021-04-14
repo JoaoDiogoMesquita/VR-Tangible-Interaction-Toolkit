@@ -5,7 +5,7 @@ A part of the [VR Tangible Interaction Toolkit](../), a family of components tha
 
 This component aims to give the user the possibility of detect swipe movements in a set of fiducial markers. The systems record in real time the occlusion of those markers and emit an event to the object where the component's attached (or additional targets) every time a sequence is detected.
 
-In the following set of images of [example 1](examples/example1.html) the sequence to detect was blue, red and then yellow cube. When the sequence was detected an event was emitted to the yellow box that turned red.
+In the following set of gifs the sequence to detect was blue, red and then yellow cube. When the sequence was detected an event was emitted to the orange box that turned purple.
 
 |||
 |------------|-------------|
@@ -32,7 +32,7 @@ The component can be attached to an object that will work as a reference or any 
 
 With reference:
 ```html
-<a-marker preset="hiro"  swipe = "markers:#my1,#my2,#my3; eventTargets: #box1, #box2 ; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: True; debug: True;">
+<a-marker preset="hiro"  mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box1, #box2 ; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: True; debug: True;">
     <a-box id="reference" color="green" ></a-box>
 </a-marker>
 
@@ -50,7 +50,7 @@ With reference:
 ```
 Without reference:
 ```html
-<a-marker id="my1" type="barcode" value="1"  swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
+<a-marker id="my1" type="barcode" value="1"  mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
     <a-box  color="blue" ></a-box>
 </a-marker>
 
@@ -65,7 +65,7 @@ Without reference:
 ```
 
 ```html
-<a-scene swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
+<a-scene mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
     <a-marker id="my1" type="barcode" value="1">
         <a-box  color="blue" ></a-box>
     </a-marker>
@@ -115,3 +115,4 @@ document.getElementById('id').addEventListener('event_swipe', e=>{
 ### Examples
 
 * [Example 1](examples/example1.html)
+* [Example 2](examples/example2.html)

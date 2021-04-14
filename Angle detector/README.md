@@ -5,7 +5,7 @@ A part of the [VR Tangible Interaction Toolkit](../), a family of components tha
 
 This component aims to give the user the possibility of attach the angle rotation of a virtual object to a variable. The systems record in real time the angle in a chosen axis and emit an event to the rotating object (or additional targets) every time the rotations passes the input threshold.
 
-In the following set of images of [example 2](examples/example2.html), when the marker with the red cube rotate 45º, an event is emitted, and the yellow cube turn red.
+In the following set of images of gifs, when the marker with the cube rotate 45º, an event is emitted, and the cube into red or yellow.
 
 |||
 |------------|-------------|
@@ -25,7 +25,7 @@ In the following set of images of [example 2](examples/example2.html), when the 
 ### How to use
 The component can be attached to an object like in the following example:
 ```html
-<a-box angle-detector="threshold:45; eventTargets: #box1,#box2,#box3; axis:y; debug: True" ></a-box>
+<a-box mt-angle-detector="threshold:45; eventTargets: #box1,#box2; axis:x,y; debug: True" ></a-box>
 ```
 
 #
@@ -33,11 +33,11 @@ The component can be attached to an object like in the following example:
 
 | Name | Description |
 | -------- | ----------------- |
-| rotation_event| Event corresponding to the positive rotation of the marker . |
+| event_rotation | Event corresponding to the positive rotation of the marker . |
 
 An event called rotation_event will be emitted every time the interaction detected. Inside this event, there will be some fields with additional information like a timestamp (in ms) the axis where the rotation was detected, the direction (positive or negative), and the object rotated.
 ```js
-const rotation_event = new CustomEvent('rotation_event', {
+const event_rotation = new CustomEvent('event_rotation', {
     detail: {
       time: time,
       axis: axis ,
@@ -48,9 +48,9 @@ const rotation_event = new CustomEvent('rotation_event', {
 });
 ```
 
-The aditional information can be acessed in the 'detail' field of the 'rotation_event' like in the following example:
+The additional information can be accessed in the 'detail' field of the 'event_rotation' like in the following example:
 ```js
-document.getElementById('id').addEventListener('rotation_event', e=>{
+document.getElementById('id').addEventListener('event_rotation', e=>{
     if(e.detail.direction == 'positive'){
         console.log('Rotation of +', e.detail.threshold, ' angles in ', e.detail.axis, ' axis.')
     }   
@@ -65,3 +65,4 @@ document.getElementById('id').addEventListener('rotation_event', e=>{
 ### Examples
 
 * [Example 1](examples/example1.html)
+* [Example 2](examples/example2.html)

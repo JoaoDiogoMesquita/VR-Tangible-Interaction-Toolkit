@@ -62,7 +62,7 @@ AFRAME.registerComponent('mt-angle-detector', {
           else {
             direction = 'negative';
           }
-          const event_rotation = new CustomEvent('rotation_event', {
+          const event_rotation = new CustomEvent('event_rotation', {
             detail: {
               time: time,
               axis: axis ,

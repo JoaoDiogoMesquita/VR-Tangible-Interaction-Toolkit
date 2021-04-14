@@ -15,12 +15,10 @@
 
 <a-scene arjs = 'sourceType: video; sourceUrl: ../images/video_rotate.mp4;'>
 
-  <a-entity id = "env";
-            environment ="preset: japan;dressing: torii;  dressingAmount: 20; dressingColor: red; dressingScale: 10;">
-  </a-entity>
+  <a-entity id = "env"; environment ="preset: japan;dressing: torii;  dressingAmount: 20; dressingColor: red; dressingScale: 10;"></a-entity>
 
   <a-camera>
-    <a-marker preset = 'kanji' mt-angle-detector = "threshold: 45; eventTargets: #box ; axis:y; debug:True;">
+    <a-marker preset = 'kanji' mt-angle-detector = "threshold: 20; eventTargets: #box ; axis:y; debug:True;">
       <a-box id='box' color = "red"></a-box>
     </a-marker>
   </a-camera>
@@ -30,9 +28,9 @@
 
 <script>
   let box = document.getElementById('box');
-  box.addEventListener("rotation_event", function(e){
+  box.addEventListener("event_rotation", function(e){
     if(box.getAttribute("color") == "red"){
-      box.setAttribute("color", "yellow")
+      box.setAttribute("color", "purple")
     }
     else{
       box.setAttribute("color", "red")
