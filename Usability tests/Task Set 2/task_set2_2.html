@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <!-- Insert your code in this area -->
+
+  <!-- -- -->
+</head>
+
+
+  <body>
+
+    <a-scene arjs='sourceType: video; sourceUrl: video.mp4 ;detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+      <!--Environment setup -->
+      <a-entity environment="preset: goldmine;"></a-entity>
+      <!--Environment setup -->
+
+      <!-- Insert your code in this area -->
+      <a-marker id = 'ref' preset='kanji'>
+        <a-cylinder color="orange" position='0 0 2' radius="0.3" height="0.2"></a-cylinder>
+      </a-marker>
+
+      <a-marker preset='hiro'>
+        <a-cylinder color="green" position='0 0 -2' radius="0.3" height="0.2" ></a-cylinder>
+      </a-marker>
+
+      <a-box id='box' position="0 0 -10" color="red"  ></a-box>
+
+      <!-- -- -->
+
+    </a-scene>
+
+
+  </body>
+
+</html>
+
+
