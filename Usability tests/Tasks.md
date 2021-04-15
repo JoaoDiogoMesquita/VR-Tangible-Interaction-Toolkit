@@ -46,7 +46,6 @@ Detect the marker/box shaking and:
 
 Code: [Task Set 1](https://glitch.com/edit/#!/placid-fork-dry)
 
-Note: The code is already prepared to make the object 'box1' shake. 
 
 #
 ### Task Set 2 ([Button Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Button))
