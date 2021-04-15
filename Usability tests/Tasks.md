@@ -18,10 +18,16 @@ We ask that you leave comments in the code indicating the three points mentioned
 
 Each task should be solved in its own HTML file, as provided.
 
+If you don't have an IDE or simply prefer to use our programing environment, there are projects on Glitch that you just have to remix to edit and run code on yout browser:
+- [Task Set 1](https://glitch.com/edit/#!/placid-fork-dry)
+- [Task Set 2](https://glitch.com/edit/#!/sun-maddening-outrigger)
+- [Task Set 3](https://glitch.com/edit/#!/fire-telling-steel)
+- [Task Set 4](https://glitch.com/edit/#!/fluffy-likeable-rutabaga)
+
 
 If you have no experience with the A-Frame framework, I would first recommend that you go through the [tutorial](Tutorial.md) that has been prepared with the basics.
 
-If you don't have experience in writing custom A-Frame components, you may wish to solve only the first task in each task set below.
+If you don't have experience in writing custom A-Frame components, you may wish/it is expected for you to solve only the first task in each task set below.
 
 When you finish implementing the following tasks, please fill in the questionnaire available at this [link](https://docs.google.com/forms/d/e/1FAIpQLSdms9-KCEabZDyMNZmS4afQf8D_5sfwgyNIqRmgVggeELDwMQ/viewform?usp=sf_link) . 
 
