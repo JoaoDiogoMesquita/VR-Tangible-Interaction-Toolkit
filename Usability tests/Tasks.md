@@ -10,7 +10,7 @@ The A-Frame components that are being evaluated are documented at [https://githu
 The test consists of a number of programming tasks that you should solve using the A-Frame components that are mentioned in each task. For each task, an HTML file has been prepared with the basic A-Frame scene. In addition, the scene is already configured with a simulation of the interaction: it has been set up to play videos of a user interacting with a marker-based object, so you just have to program the experience to detect the interactions being made in the video. 
 
 While you are solving the tasks, we ask you to record three things:
-- the time spent on each task (roughly)
+- the time spent on each task (rougly, you can just write the time of start and finish in the code in order to keep track)
 - how many different attempts at each task (how many different approaches you tried before getting it right) 
 - any difficulties encountered (even if you solved the task, report anything that caused you to revise your code - misspelled a parameter name, misunderstood the meaning of a parameter, forgot including &lt;script&gt;, etc.)
 
@@ -37,7 +37,7 @@ When you finish implementing the following tasks, please fill in the questionnai
 
 ### Task 1:
 
-Use the Shake Detector component to detect the marker/box shaking and turn the element with the ID "sphere1" into blue.
+Use the Shake Detector component to detect the marker/box shaking and turn the element with the ID "sphere1" into green.
 
 ### Task 2:
 Detect the marker/box shaking and:
@@ -51,7 +51,7 @@ Code: [Task Set 1](https://glitch.com/edit/#!/placid-fork-dry)
 ### Task Set 2 ([Button Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Button))
 
 ### Task 1:
-Use Button component to detect the click and use the event to change the color of the object 'box' into blue.
+Use Button component to detect the click and use the event to change the color of the object 'box' into purple.
 
 ### Task 2:
 Use Button component to detect the click and use the event to change the [environment](https://www.npmjs.com/package/aframe-environment-component) to 'egypt' preset.
@@ -62,7 +62,7 @@ Use Button component to detect the click and use the event to change the [enviro
 ### Task Set 3 ([Swipe Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Swipe))
 
 ### Task 1:
-Use the Swipe without reference to detect the sequence (my1, my2, my3) and change the color of sphere1.
+Use the Swipe without reference to detect the sequence (my1, my2, my3) and change the color of sphere1 to red.
 
 ### Task 2:
 Change the parameters to use sphere1 as reference and detect the sequence (my3,my2,my1). With the event, add 3 distance units to the coordinate X of sphere1. 
