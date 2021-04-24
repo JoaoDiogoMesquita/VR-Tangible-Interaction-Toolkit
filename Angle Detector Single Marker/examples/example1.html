@@ -14,16 +14,14 @@
 
 <body>
 
-<a-scene arjs = 'sourceType: video; sourceUrl: ../images/video_rotate.mp4;'>
+<a-scene arjs = 'sourceType: webcam;'>
 
-  <a-entity id = "env"; environment ="preset: japan;dressing: torii;  dressingAmount: 20; dressingColor: red; dressingScale: 10;"></a-entity>
 
   <a-camera>
-    <a-marker preset = 'kanji' mt-angle-detector = "threshold: 20; eventTargets: #box ; axis:y; debug:True;">
+    <a-marker preset = 'kanji' mt-angle-detector= "threshold: 45; eventTargets: #box ; axis:y; debug:true;">
       <a-box id='box' color = "red"></a-box>
     </a-marker>
   </a-camera>
-
 </a-scene>
 
 
@@ -42,3 +40,15 @@
 
 </html>
 
+<!--
+    <a-camera>
+        <a-marker preset = 'kanji' mt-angle-detector= "threshold: 45; eventTargets: #box ; axis:z; debug:false;">
+            <a-box id='box' color = "red"></a-box>
+        </a-marker>
+    </a-camera>
+
+         <a-box id='box' color = "red" position="0 2 -5"
+           animation="property: rotation; to: 0 0 -180; dur: 10000; easing: linear; loop: true"
+           mt-angle-detector = "threshold: 45; eventTargets: #box ; axis:Z; debug:false;"
+    ></a-box>
+ -->
