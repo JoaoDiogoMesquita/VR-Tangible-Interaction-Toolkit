@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Angle Example 1</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="../angle_detector_double.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+
+</head>
+
+<body>
+
+<a-scene arjs = 'sourceType: webcam;detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+
+    <a-camera>
+        <a-marker preset = 'kanji' mt-angle-detector-double = "threshold: 20; secondMarker: #my1; eventTargets: #box ; debug:false;">
+            <a-box id='box' color = "red"></a-box>
+        </a-marker>
+        <a-marker id="my1" preset = 'hiro'  >
+            <a-box  color="blue" ></a-box>
+        </a-marker>
+    </a-camera>
+
+
+</a-scene>
+
+
+<script>
+    let box = document.getElementById('box');
+    box.addEventListener("event_rotation", function(e){
+        if(box.getAttribute("color") == "red"){
+            box.setAttribute("color", "purple")
+        }
+        else{
+            box.setAttribute("color", "red")
+        }
+    })
+</script>
+</body>
+
+</html>
+<!--
+    <a-camera>
+        <a-marker preset = 'kanji' mt-angle-detector= "threshold: 45; eventTargets: #box ; axis:z; debug:false;">
+            <a-box id='box' color = "red"></a-box>
+        </a-marker>
+    </a-camera>
+        <a-box id='box' color = "red" position="0 2 -5"
+           animation="property: rotation; to: 0 0 -180; dur: 10000; easing: linear; loop: true"
+           mt-angle-detector = "threshold: 45; eventTargets: #box ; axis:z; debug:false;"
+    ></a-box>
+
+ -->
