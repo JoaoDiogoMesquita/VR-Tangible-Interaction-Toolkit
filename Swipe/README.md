@@ -22,13 +22,13 @@ In the following set of gifs the sequence to detect was blue, red and then yello
 | markers | The set of markers where will be detected occlusion. | selectorAll |     |
 | sequences | The sequences that will be detected, based on the order of the variable markers. (ex: "1 2 3,3 2 1;" )| string |  |
 | maximumTime | Maximum time (in ms) to consider movement valid. | int | 1000 |
-| hasReference | To select if the markers have a reference marker or not. If so, it is the element with the component attached. | selectorAll |  |
+| hasReference | To select if the markers have a reference or not. If so, it is the element with the component attached. | selectorAll |  |
 | eventTargets | Optional targets to emit event. | selectorAll |  |
 | debug | Optional parameter to activate debug prints. | boolean  |false |
 
 #
 ### How to use
-The component can be attached to an object that will work as a reference marker or any other object without a reference marker. A reference marker is a marker that needs to be visible, so the component can work.
+The component can be attached to an object that will work as a reference or any other object without a reference like in the following examples:
 
 With reference:
 ```html
@@ -65,8 +65,7 @@ Without reference:
 ```
 
 ```html
-<a-scene mt-swipe = "markers: a-marker ; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
-   
+<a-scene mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box1; sequences:1 3 2,2 3 1; maximumTime: 3000; hasReference: False; debug: True;">
     <a-marker id="my1" type="barcode" value="1">
         <a-box  color="blue" ></a-box>
     </a-marker>

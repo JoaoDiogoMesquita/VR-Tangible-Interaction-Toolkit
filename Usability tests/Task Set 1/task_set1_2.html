@@ -20,17 +20,22 @@
     <a-scene arjs="sourceType: video; sourceUrl: video_front_back.mp4">
 
       <!--Environment setup -->
-      <a-entity  environment="preset: goldmine;">      </a-entity>
+      <a-entity id = "env" environment="preset: goldmine;
+                           dressing: mushrooms;
+                           dressingAmount: 20;
+                           dressingColor: orange;
+                           dressingScale: 1">
+      </a-entity>
       <!--  -->
 
       <a-camera>
         <!-- Insert your code in this area -->
-        <a-marker preset = "kanji" >
+        <a-marker id="marker1" preset = "kanji" >
           <a-box height="0.5" width="0.5"  color="red"></a-box>
         </a-marker>
       </a-camera>
 
-      <a-sphere  position = "5 2 -10" color="blue" ></a-sphere>
+      <a-sphere id =  "sphere1"  position = "5 2 -10" color="blue" ></a-sphere>
       <!-- -- -->
 
     </a-scene>
