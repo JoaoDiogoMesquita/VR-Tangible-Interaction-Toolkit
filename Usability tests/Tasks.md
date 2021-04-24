@@ -33,22 +33,22 @@ When you finish implementing the following tasks, please fill in the questionnai
 
 
 #
-## Task Set 1 ([Shake Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Shake%20detector))
+## Task Set 1 ([Shake Detector Component (mt-shake_detector)](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Shake%20detector))
 
 ### Task 1:
 
-Use the Shake Detector component to detect the marker/box shaking and turn the element with the ID "sphere1" into green.
+Use the Shake Detector component to detect the marker/box shaking front/back and turn the element with the sphere into green.
 
 ### Task 2:
 Detect the marker/box shaking and:
- * move the sphere1 10 distance units to the right each time the box is shaken horizontally (left/right, but not front/back)
- * move the sphere1 10 distance units up each time the box is shaken vertically.
+ * move the sphere 1 meters to the right each time the box is shaken horizontally (left/right)
+ * move the sphere 1 meters up each time the box is shaken vertically (up/down).
 
 Code: [Task Set 1](https://glitch.com/edit/#!/placid-fork-dry)
 
 
 #
-### Task Set 2 ([Button Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Button))
+## Task Set 2 ([Button Component (mt-button)](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Button))
 
 ### Task 1:
 Use Button component to detect the click and use the event to change the color of the object 'box' into purple.
@@ -59,23 +59,28 @@ Use Button component to detect the click and use the event to change the [enviro
 
 - Code: [Task Set 2](https://glitch.com/edit/#!/sun-maddening-outrigger)
 #
-### Task Set 3 ([Swipe Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Swipe))
+## Task Set 3 ([Swipe Detector Component (mt-swipe)](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Swipe))
 
 ### Task 1:
-Use the Swipe without reference to detect the sequence (my1, my2, my3) and change the color of sphere1 to red.
+Use the Swipe without reference marker to detect the sequence (my1, my2, my3) and change the color of the sphere to red.
 
 ### Task 2:
-Change the parameters to use sphere1 as reference and detect the sequence (my3,my2,my1). With the event, add 3 distance units to the coordinate X of sphere1. 
+Use the Swipe with reference marker (marker with preset "hiro") to detect the sequence (my3, my2, my1) and change the position of te sphere in 1 unit in X axis.
 
 - Code: [Task Set 3](https://glitch.com/edit/#!/fire-telling-steel)
 
 #
-### Task Set 4 ([Angle Detector Component](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Angle%20detector))
+## Task Set 4 ([Angle Detector Component (mt-angle_detector)](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Angle%20detector))
 
 ### Task 1:
-Use Angle Detector component to detect a rotation of 20º in Y axis and use it to change the color of sphere1 to blue.
+Use Angle Detector component to detect a rotation of 20º in Y axis and use it to change the color of the sphere to blue.
 
 ### Task 2:
-Add the behaviour detection on the X axis with the same angle but this time, this detection must change the color back to red.
+Add the rotation detection on the X axis with the same angle but this time, this detection must change the color of the sphere to red.
 
 - Code: [Task Set 4](https://glitch.com/edit/#!/fluffy-likeable-rutabaga)
+
+
+#
+##Final task
+Fill in the questionnaire available at this [link](https://docs.google.com/forms/d/e/1FAIpQLSdms9-KCEabZDyMNZmS4afQf8D_5sfwgyNIqRmgVggeELDwMQ/viewform?usp=sf_link) . 
