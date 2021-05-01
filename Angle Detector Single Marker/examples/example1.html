@@ -7,7 +7,7 @@
   <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
-  <script src="../angle_detector.js"></script>
+  <script src="../angle_detector_single.js"></script>
   <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
 
 </head>
@@ -18,10 +18,11 @@
 
 
   <a-camera>
-    <a-marker preset = 'kanji' mt-angle-detector= "threshold: 45; eventTargets: #box ; axis:y; debug:true;">
+    <a-marker preset = 'kanji' mt-angle-detector-sm= "threshold: 45; eventTargets: #box ; axis:z; debug:true;">
       <a-box id='box' color = "red"></a-box>
     </a-marker>
   </a-camera>
+
 </a-scene>
 
 

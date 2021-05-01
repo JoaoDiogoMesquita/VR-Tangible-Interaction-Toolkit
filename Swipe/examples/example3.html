@@ -1,0 +1,77 @@
+<html class="no-js" lang="">
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Swipe Example 2</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="../swipe.js"></script>
+
+</head>
+
+<body>
+    <a-scene arjs='sourceType: webcam;'>
+        <a-entity id = 'env' environment="preset: default;"></a-entity>
+
+        <a-camera>
+
+            <a-marker preset="hiro"  mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box, #env; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: false; debug: True;">
+                <a-box id="reference" color="green" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my1" type="barcode" value="1"  >
+                <a-box  color="blue" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my2" type="barcode" value="2" >
+                <a-box color="red" height = 0.05></a-box>
+            </a-marker>
+
+            <a-marker id="my3" type="barcode" value="3" >
+                <a-box  color="yellow" height = 0.05></a-box>
+            </a-marker>
+
+        </a-camera>
+
+
+        <a-box id='box' position="3 0 -10" color="yellow" event-set__event_swipe ="color:red"></a-box>
+
+    </a-scene>
+    <select  id="sourceVideos" style="position:absolute; top: 100px; left: 100px">
+        <option value="../images/swipe_right">Swipe right</option>
+        <option value="../images/swipe_left">Swipe left</option>
+    </select>
+    <script>
+        let select = document.querySelector("#sourceVideos");
+        select.addEventListener("change", function(evt) {
+            document.querySelector("video").src = select.value+".mp4";
+        })
+        let env = document.getElementById('env')
+        var index = 0;
+        let envs = ['contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris']
+        env.addEventListener('event_swipe', e=>{
+
+            console.log(e.detail.sequenceIndex)
+            if(e.detail.sequenceIndex == 1){
+                if(index != envs.length){
+                    index += 1;
+                    preset = envs[index]
+                }
+            }
+            else if(e.detail.sequenceIndex == 2){
+                if(index != 0){
+                    index -= 1;
+                    preset = envs[index]
+                }
+            }
+            env.setAttribute('environment', 'preset:'+ preset );
+            console.log(env)
+        });
+    </script>
+</body>
+
+</html>
+
