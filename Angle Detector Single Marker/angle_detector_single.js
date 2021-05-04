@@ -43,11 +43,7 @@ AFRAME.registerComponent('mt-angle-detector-sm', {
 
       //Process only in the selected axes for optimal perfomance
       this.data.axis.forEach(function (axis) {
-            //console.log( THREE.Math.radToDeg(this.actualAngle[axis]), this.actualAngle[axis])
-
-
             //Calculate input angle
-
             //Both positive side
             if (this.actualAngle[axis] > 0 && this.lastAngle[axis] > 0) {
               this.inputAngle[axis] = this.actualAngle[axis] - this.lastAngle[axis]

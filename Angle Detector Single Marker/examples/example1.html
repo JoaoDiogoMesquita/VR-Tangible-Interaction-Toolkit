@@ -14,11 +14,11 @@
 
 <body>
 
-<a-scene arjs = 'sourceType: webcam;'>
+<a-scene arjs = 'sourceType:video; sourceUrl: ../images/video_rotate.mp4;'>
 
 
   <a-camera>
-    <a-marker preset = 'kanji' mt-angle-detector-sm= "threshold: 45; eventTargets: #box ; axis:z; debug:true;">
+    <a-marker preset = 'kanji' mt-angle-detector-sm= "threshold: 20; eventTargets: #box ; axis:z; debug:true;">
       <a-box id='box' color = "red"></a-box>
     </a-marker>
   </a-camera>

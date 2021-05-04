@@ -14,10 +14,10 @@
 <body>
 <a-scene arjs='sourceType: video; sourceUrl: ../images/video_rotate.mp4;' >
   <a-light id="ambientLight" intensity= 1; type="ambient" color="#BBB" > </a-light>
-  <a-entity id = "env"; environment ="preset: default;dressing: torii;  dressingAmount: 20; dressingColor: red; dressingScale: 10;"></a-entity>
+  <a-entity id = "env"; environment ="preset: default;dressing: torii;"></a-entity>
 
   <a-camera>
-    <a-marker preset = 'kanji'  mt-angle-detector = "threshold: 20; eventTargets: #box, #ambientLight; axis:y;">
+    <a-marker preset = 'kanji'  mt-angle-detector-sm = "threshold: 20; eventTargets: #box, #ambientLight; axis:y;">
       <a-box color="red" radius="0.5"></a-box>
     </a-marker>
   </a-camera>
