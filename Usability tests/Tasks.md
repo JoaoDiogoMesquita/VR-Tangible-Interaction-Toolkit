@@ -70,7 +70,7 @@ Use the Swipe with reference marker (marker with preset "hiro") to detect the se
 - Code: [Task Set 3](https://glitch.com/edit/#!/fire-telling-steel)
 
 #
-## Task Set 4 ([Angle Detector Component (mt-angle_detector)](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Angle%20detector))
+## Task Set 4 ([Angle Detector Component (mt-angle_detector)](https://github.com/JoaoDiogoMesquita/VR-Tangible-Interaction-Toolkit/tree/master/Angle%20Detector%20Single%20Marker))
 
 ### Task 1:
 Use Angle Detector component to detect a rotation of 20º in Y axis and use it to change the color of the sphere to blue.
