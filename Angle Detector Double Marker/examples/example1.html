@@ -18,7 +18,7 @@
     <a-light id="ambientLight" intensity= 1; type="ambient" color="#BBB" > </a-light>
 
     <a-camera>
-        <a-marker id="my2" type="barcode" value="3" mt-angle-detector-dm= "threshold: 10; secondMarker: #my1; eventTargets: #box2, #box1 ; debug:false;">
+        <a-marker id="my2" type="barcode" value="3" mt-angle-detector-dm= "threshold: 10; movement : 1; secondMarker: #my1; eventTargets: #box2, #box1 ; debug:true;">
             <a-box id='box2' color = "red"></a-box>
         </a-marker>
         <a-marker id="my1" type="barcode" value="6"  >

@@ -110,7 +110,7 @@ AFRAME.registerComponent('mt-angle-detector-sm', {
                 }.bind(this))
               }
               // Restart saved angle variable
-              if(this.savedAngle[axis] > 0) {
+              if(this.savedAngle[axis] > 0 ) {
                 this.savedAngle[axis] = this.savedAngle[axis] - THREE.Math.degToRad(this.threshold);
               }
               else if(this.savedAngle[axis] < 0){
