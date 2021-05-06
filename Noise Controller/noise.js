@@ -1,6 +1,6 @@
 AFRAME.registerComponent("mt-noise-controller", {
     schema: {
-        maximum_time: { type: "int", default: 1000 },
+        maximum_time: { type: 'int', default: 1000 },
         debug : {type: 'boolean', default: false},
     },
 
