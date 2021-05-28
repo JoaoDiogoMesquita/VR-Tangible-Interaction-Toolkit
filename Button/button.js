@@ -3,7 +3,8 @@ AFRAME.registerComponent('mt-button', {
     referenceMarker: {type: 'selector'},
     eventTargets: {type: 'selectorAll'},
     minimumTime : {type: 'int', default: 250},
-    debug : {type: 'boolean', default: false}
+    debug : {type: 'boolean', default: false},
+    mode: {}
   },
 
   init: function () {
@@ -57,10 +58,12 @@ AFRAME.registerComponent('mt-button', {
 
 
           //To targets
-          this.data.eventTargets.forEach(function (target) {
-            target.dispatchEvent(event_button)
-            console.log('Emitting event: Button pressed   Time: ', time, '    Object: ', this.el , '    Target: ', target   );
-          }.bind(this))
+          if(this.data.eventTargets != null){
+            this.data.eventTargets.forEach(function (target) {
+              target.dispatchEvent(event_button)
+              console.log('Emitting event: Button pressed   Time: ', time, '    Object: ', this.el , '    Target: ', target   );
+            }.bind(this))
+          }
         }
         else {
           if (this.data.debug) {

@@ -95,16 +95,17 @@ AFRAME.registerComponent('mt-swipe', {
                         this.el.dispatchEvent(event_swipe)
                         if(this.data.debug)
                             console.debug('event_swipe', event_swipe)
+                        if(this.data.eventTargets != null){
+                            this.data.eventTargets.forEach(function (target) {
 
-                        this.data.eventTargets.forEach(function (target) {
+                                target.dispatchEvent(event_swipe)
 
-                            target.dispatchEvent(event_swipe)
-
-                            if(this.data.debug)
-                                console.debug('event_swipe', event_swipe)
+                                if(this.data.debug)
+                                    console.debug('event_swipe', event_swipe)
 
 
-                        }.bind(this))
+                            }.bind(this))
+                        }
 
                         this.covered.splice(firstIndex , sequence.length)
 
