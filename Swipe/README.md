@@ -29,9 +29,8 @@ In the following set of gifs the sequence to detect was blue, red and then yello
 ### How to use
 The component can be attached to an object that will work as a reference marker. A reference marker is a marker that needs to be visible, so the component can work.
 
-With reference:
 ```html
-<a-marker preset="hiro"  mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box1, #box2 ; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: True; debug: True;">
+<a-marker preset="hiro"  mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box1, #box2 ; sequences:1 2 3,3 2 1; maximumTime: 3000;  debug: True;">
     <a-box id="reference" color="green" ></a-box>
 </a-marker>
 
@@ -51,7 +50,6 @@ With reference:
 #### NOTE 
 The order of the sequence is made with the order that the markers are in the HMTL file. 
 In the reference example the order will be : my1, my2, my3 . 
-In the second example (without reference) the order will be : my1, my3, my2. As so, the sequences are different. 
 #
 
 ### Events
@@ -85,3 +83,4 @@ document.getElementById('id').addEventListener('event_swipe', e=>{
 
 * [Example 1](examples/example1.html)
 * [Example 2](examples/example2.html)
+* [Example 3](examples/example3.html)
