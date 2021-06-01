@@ -1,9 +1,9 @@
-# Angle Detector Component
+# Angle Detector Single Marker Component
 For [A-Frame](https://aframe.io).
 
 A part of the [VR Tangible Interaction Toolkit](../), a family of components that aims to facilitate the programing of VR interactions with fiducial markers.
 
-This component aims to give the user the possibility of attach the angle rotation of a virtual object to a variable. The systems record in real time the angle in a chosen axis and emit an event to the rotating object (or additional targets) every time the rotations passes the input threshold.
+This component aims to give the user the possibility of attach the angle rotation of a marker to a variable. The systems record in real time the angle in a chosen axis and emit an event to the rotating object (or additional targets) every time the rotations passes the input threshold.
 
 In the following set of images of gifs, when the marker with the cube rotate 45ยบ, an event is emitted, and the cube into red or yellow.
 
@@ -13,7 +13,7 @@ In the following set of images of gifs, when the marker with the cube rotate 45ย
 
 
 
-### mt-angle-detector
+### mt-angle-detector-sm
 | Property | Description | Type | Default Value |
 | -------- | ----------------- | ---- |------------- |
 | threshold | An event will be emitted every time this threshold is reached . | float | 20    |
@@ -25,7 +25,7 @@ In the following set of images of gifs, when the marker with the cube rotate 45ย
 ### How to use
 The component can be attached to an object like in the following example:
 ```html
-<a-box mt-angle-detector="threshold:45; eventTargets: #box1,#box2; axis:x,y; debug: True" ></a-box>
+<a-box mt-angle-detector-sm="threshold:45; eventTargets: #box1,#box2; axis:x,y; debug: True" ></a-box>
 ```
 
 #

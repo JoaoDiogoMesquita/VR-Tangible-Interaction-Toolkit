@@ -9,6 +9,13 @@ The goal is for this to be used with fiducial markers detected through a Javascr
 - [Swipe](Swipe)
 - [Button](Button)
 - [Shake detector](Shake%20detector)
-- [Angle detector](Angle%20detector)
+- [Angle Detector Single Marker](Angle%20Detector%20Single%20Marker)
+- [Angle Detector Double Marker](Angle%20Detector%20Double%20Marker)
+- [Noise Controller](Noise%20Controller)
+
+
+Experiences developed:
+
+- [Experiences](Experiences)
 
 
