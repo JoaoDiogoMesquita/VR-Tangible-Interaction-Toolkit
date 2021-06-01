@@ -12,12 +12,16 @@
 </head>
 
 <body>
-    <a-scene arjs='sourceType: video; sourceUrl: ../images/swipe_right.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'
-             mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: false; debug: true;">
+    <a-scene arjs='sourceType: video; sourceUrl: ../images/swipe_right.mp4; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
         <a-entity id = "env"; environment ="preset: forest; "></a-entity>
 
         <a-camera>
+
+            <a-marker preset="hiro" mt-swipe = "markers:#my1,#my2,#my3; eventTargets: #box; sequences:1 2 3,3 2 1; maximumTime: 3000; debug: true;">
+                <a-box id="reference" color="green" height = 0.05></a-box>
+            </a-marker>
+
             <a-marker id="my1" type="barcode" value="1"  >
                 <a-box  color="blue" ></a-box>
             </a-marker>

@@ -5,7 +5,6 @@ AFRAME.registerComponent('mt-swipe', {
         sequences : {type: 'string'},
         eventTargets: {type: 'selectorAll'},
         maximumTime : {type : 'int', default: 10000},
-        hasReference : {type: 'boolean', default: true},
         debug : {type: 'boolean', default: false}
     },
 
@@ -15,7 +14,7 @@ AFRAME.registerComponent('mt-swipe', {
 
     update: function(){
         this.maximumTime= this.data.maximumTime;
-        this.hasReference = this.data.hasReference;
+        this.referenceMarker = this.el;
         this.sequences = []
         this.markers = []
         this.covered = [];
@@ -41,7 +40,7 @@ AFRAME.registerComponent('mt-swipe', {
 
 
     tick: function (time) {
-        if((this.el.object3D.visible && this.hasReference ) || !this.hasReference) {
+        if( this.referenceMarker.object3D.visible == true ) {
 
             //if the lastCovered variable was already identified as part of a sequence it shouldn't be in the condition
             if(this.covered.length == 0)
