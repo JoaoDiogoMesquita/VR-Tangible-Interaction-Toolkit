@@ -25,7 +25,7 @@ In the following set of images of gifs, when the marker with the cube rotate 45Â
 ### How to use
 The component can be attached to an object like in the following example:
 ```html
-<a-box mt-angle-detector-sm="threshold:45; eventTargets: #box1,#box2; axis:x,y; debug: True" ></a-box>
+<a-marker mt-angle-detector-sm="threshold:45; eventTargets: #box1,#box2; axis:y; debug: True" ></a-marker>
 ```
 
 #

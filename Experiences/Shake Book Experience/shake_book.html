@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Album Experience</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+    <script src="../../Shake%20detector/shake_detector.js"></script>
+    <script src="../../Angle%20Detector%20Double%20Marker/angle_detector_double.js"></script>
+    <script src="../../Noise%20Controller/noise.js"></script>
+
+
+</head>
+<body>
+    <a-scene arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
+        <a-assets>
+            <a-asset-item id="torreMTL" src="torre.mtl"></a-asset-item>
+            <a-asset-item id="torreOBJ" src="torre.obj"></a-asset-item>
+
+            <a-asset-item id="sinoMTL" src="obj2_sino.mtl"></a-asset-item>
+            <a-asset-item id="sinoOBJ" src="obj2_sino.obj"></a-asset-item>
+        </a-assets>
+
+        <a-sky ></a-sky>
+
+        <a-entity id = 'env' environment="preset: goldmine;"></a-entity>
+
+        <a-light id="ambientLight" intensity= 1; type="ambient" color="#BBB" > </a-light>
+
+        <a-camera>
+
+            <-- Torre -->
+            <a-marker type="pattern" url= "letterA.patt" mt-noise-controller>
+                <a-entity obj-model="obj: #torreOBJ; mtl: #torreMTL" scale="0.1 0.1 0.1" ></a-entity>
+            </a-marker>
+            <-- Sino -->
+            <a-marker preset = "hiro"  mt-shake-detector = "switchInterval: 1000 ; minimumSwitchTimes: 3 ; minimumDistance: 0.2 ; eventTargets:#env; axis:z ; debug: true;">
+                <a-entity obj-model="obj: #sinoOBJ; mtl: #sinoMTL" scale="0.5 0.5 0.5" ></a-entity>
+            </a-marker>
+
+            <-- Capa -->
+            <a-marker type="barcode" value="0" >
+                <a-image src="pink_floyd.png" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
+            </a-marker>
+
+            <!-- Pagina 1-->
+            <a-marker id="my1" type="barcode" value="1" mt-angle-detector-dm= "threshold: 10 ; movement : 1; secondMarker: #my2;  debug:false;" >
+                <a-image src="jungle.jpg" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
+            </a-marker>
+
+            <!-- Pagina 2-->
+            <a-marker id="my2" type="barcode" value="2"  >
+                <a-image src="jungle2.jpg" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
+            </a-marker>
+
+            <!-- Pagina 3-->
+            <a-marker id="my3" type="barcode" value="3"  mt-angle-detector-dm= "threshold: 10; movement : 1; secondMarker: #my4; debug:false;" >
+                <a-image src="sea.jpg" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
+            </a-marker>
+
+            <!-- Pagina 4-->
+            <a-marker id="my4" type="barcode" value="4" >
+                <a-image src="sea2.jpg" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
+            </a-marker>
+
+            <!-- Pagina 5-->
+            <a-marker id="my5" type="barcode" value="5"  mt-angle-detector-dm= "threshold: 10; movement : 1; secondMarker: #my6;  debug:false;" >
+                <a-image src="japan.jpg" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
+            </a-marker>
+
+            <!-- Pagina 6-->
+            <a-marker id="my6" type="barcode" value="6"  >
+                <a-image src="japan2.jpg" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
+            </a-marker>
+
+        </a-camera>
+
+    </a-scene>
+
+
+    <script>
+        let env = document.getElementById('env')
+
+        env.addEventListener('event_shake', e=>{
+            let env = document.getElementById('env')
+            let envs = ['contact', 'egypt', 'checkerboard', 'forest', 'goaland', 'yavapai', 'goldmine', 'threetowers', 'poison', 'arches', 'tron', 'japan', 'dream', 'volcano', 'starry', 'osiris']
+            let random_element = envs[Math.floor(Math.random() * envs.length)];
+            env.setAttribute('environment', 'preset: ' + random_element );
+        });
+
+        let marker1 = document.getElementById('my1')
+        marker1.addEventListener('event_rotation_dm', e=> {
+            let env = document.getElementById('env')
+            if(e.detail.angle >= 90){
+                let env = document.getElementById('env')
+                if(env.getAttribute('environment').preset != "forest"){
+                    env.setAttribute('environment', 'preset: forest');
+                }
+            }
+            let light = document.getElementById('ambientLight');
+            light.setAttribute('intensity', e.detail.angle / 180);
+
+        });
+        let marker3 = document.getElementById('my3')
+        marker3.addEventListener('event_rotation_dm', e=> {
+            let env = document.getElementById('env')
+            if(e.detail.angle >= 90){
+                let env = document.getElementById('env')
+                if(env.getAttribute('environment').preset != "dream"){
+                    env.setAttribute('environment', 'preset: dream');
+                }
+            }
+            let light = document.getElementById('ambientLight');
+            light.setAttribute('intensity', e.detail.angle / 180);
+
+        });
+
+        let marker5 = document.getElementById('my5')
+        marker5.addEventListener('event_rotation_dm', e=> {
+            let env = document.getElementById('env')
+            if(e.detail.angle >= 90){
+                let env = document.getElementById('env')
+                if(env.getAttribute('environment').preset != "japan"){
+                    env.setAttribute('environment', 'preset: japan');
+                }
+            }
+            let light = document.getElementById('ambientLight');
+            light.setAttribute('intensity', e.detail.angle / 90);
+
+        });
+    </script>
+
+</body>
+
+</html>
+
+

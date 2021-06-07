@@ -235,7 +235,7 @@ Refer to the [A-Frame documentation](https://aframe.io/docs/1.1.0/introduction/w
 <html>
   <head>
     <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
-    <!-- Import the Shake Detector component -->
+    <!-- Import the Shake Book Experience Detector component -->
     <script src="shake_detector.js"></script>
   </head>
   <body>
