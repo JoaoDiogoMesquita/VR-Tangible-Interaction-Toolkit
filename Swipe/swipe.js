@@ -40,6 +40,7 @@ AFRAME.registerComponent('mt-swipe', {
 
 
     tick: function (time) {
+
         if( this.referenceMarker.object3D.visible == true ) {
 
             //if the lastCovered variable was already identified as part of a sequence it shouldn't be in the condition
@@ -60,7 +61,7 @@ AFRAME.registerComponent('mt-swipe', {
             //Filter covered structure by time passed, given the maximum time
             this.covered = this.covered.filter(item => this.maximumTime > time - item.time)
 
-                //Test if a sequence was done
+            //Test if a sequence was done
             var sequenceIndex = 0;
             this.sequences.forEach(function(sequence){
                 sequenceIndex++;

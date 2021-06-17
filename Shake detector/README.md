@@ -1,4 +1,4 @@
-# A-Frame Shake Detector Component
+ A-Frame Shake Detector Component
 For [A-Frame](https://aframe.io). 
 
 A part of the [VR Tangible Interaction Toolkit](../), a family of components that aims to facilitate the programing of VR interactions with fiducial markers.
@@ -27,7 +27,9 @@ In the following set of gifs, the marker with the blue sphere is shaking in the 
 ### How to use
 The component can be attached to an object like in the following examples:
 ```html
-<a-marker preset = 'hiro'  mt-shake-detector = "switchInterval: 500 ; minimumSwitchTimes: 3 ; minimumDistance: 0.3 ; eventTargets:#myBox; axis:y ; debug: true;"></a-marker>
+<a-marker preset = 'hiro'  
+          mt-shake-detector = "switchInterval: 500 ; minimumSwitchTimes: 3 ; minimumDistance: 0.3 ; eventTargets:#myBox; axis:y ; debug: true;">
+</a-marker>
 ```
 #
 ### Events

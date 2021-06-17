@@ -33,11 +33,13 @@ The component can be attached to a reference  marker object like in the followin
 
 
 ```html
- <a-marker id = 'ref' preset='kanji' >
+ <a-marker id = 'ref' 
+           preset='kanji' >
   <a-cylinder color="orange" position='0 0 2' radius="0.3" height="0.2"></a-cylinder>
 </a-marker>
 
-<a-marker preset='hiro' mt-button="referenceMarker: #ref ;eventTargets: #box; minimumTime: 100; debug: true;">
+<a-marker preset='hiro' 
+          mt-button="referenceMarker: #ref ;eventTargets: #box; minimumTime: 100; debug: true;">
   <a-cylinder color="green" position='0 0 -2' radius="0.3" height="0.2" ></a-cylinder>
 </a-marker>
 

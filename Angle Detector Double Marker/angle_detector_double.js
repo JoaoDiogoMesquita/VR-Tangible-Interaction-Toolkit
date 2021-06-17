@@ -8,7 +8,7 @@ AFRAME.registerComponent('mt-angle-detector-dm', {
   },
 
   init: function () {
-    console.log("Initializing mt-angle detector component double marker");
+    console.log("Initializing mt-angle detector double marker component ");
   },
 
 

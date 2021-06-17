@@ -26,7 +26,9 @@ The systems record in real time the angle and emit an event to the rotating obje
 ### How to use
 The component can be attached to an object like in the following example:
 ```html
-<a-marker id="my2" preset="kanji" mt-angle-detector-dm= "threshold: 10; movement : 1; secondMarker: #my1; eventTargets: #box2, #box1 ; debug:true;">
+<a-marker id="my2" 
+          preset="kanji" 
+          mt-angle-detector-dm= "threshold: 10; movement : 1; secondMarker: #my1; eventTargets: #box2, #box1 ; debug:true;">
     <a-box id='box2' color = "red"></a-box>
 </a-marker>
 

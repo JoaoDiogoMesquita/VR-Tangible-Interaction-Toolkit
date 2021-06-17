@@ -14,11 +14,11 @@
 
 <body>
 
-<a-scene arjs = 'sourceType:video; sourceUrl: ../images/video_rotate.mp4;'>
+<a-scene arjs = 'sourceType:webcam;'>
 
 
   <a-camera>
-    <a-marker preset = 'kanji' mt-angle-detector-sm= "threshold: 180; eventTargets: #box ; axis:y; debug:true;">
+    <a-marker preset = 'kanji' mt-angle-detector-sm= "threshold: 90; eventTargets: #box ; axis:x; debug:true;">
       <a-box id='box' color = "red"></a-box>
     </a-marker>
   </a-camera>
@@ -48,8 +48,9 @@
         </a-marker>
     </a-camera>
 
-         <a-box id='box' color = "red" position="0 2 -5"
-           animation="property: rotation; to: 0 0 -180; dur: 10000; easing: linear; loop: true"
-           mt-angle-detector = "threshold: 45; eventTargets: #box ; axis:Z; debug:false;"
+    <a-box id='box' color = "red" position="0 0 -5"
+           animation="property: rotation; to:-180 0 0; dur: 10000; easing: linear; loop: true"
+           mt-angle-detector-sm= "threshold: 90; eventTargets: #box ; axis:x; debug:true;"
     ></a-box>
+
  -->

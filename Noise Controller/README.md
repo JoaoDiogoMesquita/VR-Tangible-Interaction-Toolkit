@@ -28,8 +28,11 @@ The component can be attached to a reference  marker object like in the followin
 
 
 ```html
-<a-marker id = 'ref' preset='kanji' mt-noise-controller = "maximum_time : 2000; debug: true;">
-    <a-cylinder color="red"  radius="0.3" height="0.2"></a-cylinder>
+<a-marker mt-noise-controller = "maximum_time : 2000; debug: true;">
+    <a-cylinder color="red"  
+                radius="0.3" 
+                height="0.2">
+    </a-cylinder>
 </a-marker>
 ```
 
