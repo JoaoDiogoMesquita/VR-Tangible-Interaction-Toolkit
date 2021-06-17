@@ -28,7 +28,7 @@ In the following set of gifs, the marker with the blue sphere is shaking in the 
 The component can be attached to an object like in the following examples:
 ```html
 <a-marker preset = 'hiro'  
-          mt-shake-detector = "switchInterval: 500 ; minimumSwitchTimes: 3 ; minimumDistance: 0.3 ; eventTargets:#myBox; axis:y ; debug: true;">
+          mt-shake-detector="switchInterval:500; minimumSwitchTimes:3; minimumDistance:0.3; eventTargets:#id; axis:y; debug:true;">
 </a-marker>
 ```
 #
