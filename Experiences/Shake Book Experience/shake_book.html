@@ -19,19 +19,13 @@
         <a-assets>
             <a-asset-item id="torreMTL" src="torre.mtl"></a-asset-item>
             <a-asset-item id="torreOBJ" src="torre.obj"></a-asset-item>
-
             <a-asset-item id="sinoMTL" src="obj2_sino.mtl"></a-asset-item>
             <a-asset-item id="sinoOBJ" src="obj2_sino.obj"></a-asset-item>
         </a-assets>
-
         <a-sky ></a-sky>
-
         <a-entity id = 'env' environment="preset: goldmine;"></a-entity>
-
-        <a-light id="ambientLight" intensity= 1; type="ambient" color="#BBB" > </a-light>
-
+        <a-light id="ambientLight" intensity= 1; type="ambient" color="#BBB" ></a-light>
         <a-camera>
-
             <-- Torre -->
             <a-marker type="pattern" url= "letterA.patt" mt-noise-controller>
                 <a-entity obj-model="obj: #torreOBJ; mtl: #torreMTL" scale="0.1 0.1 0.1" ></a-entity>
@@ -40,7 +34,6 @@
             <a-marker preset = "hiro"  mt-shake-detector = "switchInterval: 1000 ; minimumSwitchTimes: 3 ; minimumDistance: 0.2 ; eventTargets:#env; axis:z ; debug: true;">
                 <a-entity obj-model="obj: #sinoOBJ; mtl: #sinoMTL" scale="0.5 0.5 0.5" ></a-entity>
             </a-marker>
-
             <-- Capa -->
             <a-marker type="barcode" value="0" >
                 <a-image src="pink_floyd.png" height="1.5" width="1.5" position = "0 0 -2" rotation="-90 0 0"></a-image>
