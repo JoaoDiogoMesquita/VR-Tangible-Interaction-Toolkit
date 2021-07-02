@@ -12,11 +12,14 @@ AFRAME.registerComponent('mt-button', {
   },
 
   update: function() {
+    //Initialize data structures
     this.button = this.el;
     this.reference = this.data.referenceMarker;
     this.pressed = false;
     this.timePressed = 0;
     this.minimumTime = this.data.minimumTime;
+
+    //Debug
     console.info("Debug mode set to ", this.data.debug)
     if (this.data.debug) {
       console.log('Reference: ', this.reference)

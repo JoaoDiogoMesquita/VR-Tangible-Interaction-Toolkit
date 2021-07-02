@@ -12,6 +12,7 @@ AFRAME.registerComponent('mt-angle-detector-sm', {
   },
 
   update: function(){
+    //Initialize data structures
     this.firstIteration = true;
     this.lastAngle = new THREE.Vector3();
     this.actualAngle= new THREE.Vector3();
@@ -19,14 +20,18 @@ AFRAME.registerComponent('mt-angle-detector-sm', {
     this.savedAngle = new THREE.Vector3();
     this.plane = new THREE.Plane();
     this.threshold = this.data.threshold;
+
     console.info("Debug mode set to ", this.data.debug)
   },
 
 
 
   tick: function (time, timeDelta) {
+
+    //Assure marker is visible
     if (this.el.object3D.visible) {
-      //Ignore first rotation, because of the agressive change in coordenates from 0,0,0 to first position
+
+      //Ignore first rotation, because of the aggressive change in coordinates from <0,0,0> to first actual position
       if (this.firstIteration) {
         this.firstIteration = false;
         this.lastAngle.x = this.el.object3D.rotation.x
@@ -42,10 +47,11 @@ AFRAME.registerComponent('mt-angle-detector-sm', {
       this.actualAngle.z = this.el.object3D.rotation.z
 
 
-      //Process only in the selected axes for optimal perfomance
+      //Process only in the selected axes for optimal performance
       this.data.axis.forEach(function (axis) {
           //Calculate input angle
-          //Both positive side
+
+        //Both positive side
           if (this.actualAngle[axis] > 0 && this.lastAngle[axis] > 0) {
             this.inputAngle[axis] = this.actualAngle[axis] - this.lastAngle[axis]
           }
@@ -82,11 +88,13 @@ AFRAME.registerComponent('mt-angle-detector-sm', {
 
           this.savedAngle[axis] += this.inputAngle[axis];
 
+          //Debug
           if (this.data.debug)
             console.log('ATUAL', this.actualAngle[axis] , '\t\t LAST', THREE.Math.radToDeg(this.lastAngle[axis]), '\t\t input', THREE.Math.radToDeg(this.inputAngle[axis]), '\t\t SAVED  ', THREE.Math.radToDeg(this.savedAngle[axis]))
 
           //Has saved angle passed the threshold ?
           if (Math.abs(this.savedAngle[axis]) >= THREE.Math.degToRad(this.threshold)) {
+
             //Emit events to this object and targets
             let direction = ''
             if (this.savedAngle[axis] > 0) {

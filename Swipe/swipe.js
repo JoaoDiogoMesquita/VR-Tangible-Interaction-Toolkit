@@ -13,6 +13,7 @@ AFRAME.registerComponent('mt-swipe', {
     },
 
     update: function(){
+        //Initialize data structures
         this.maximumTime= this.data.maximumTime;
         this.referenceMarker = this.el;
         this.sequences = []
@@ -20,17 +21,18 @@ AFRAME.registerComponent('mt-swipe', {
         this.covered = [];
         this.lastCovered = {id: undefined , time : undefined};
 
-        //Structure markers
+        //Structure of markers
         for(let i=0; i < this.data.markers.length; i++){
             this.markers.push({id: i+1 , marker: this.data.markers[i] })
         }
 
-        //Structure sequences
+        //Structure of sequences
         var aux = this.data.sequences.split(',')
         for(let i=0; i<aux.length; i++){
             this.sequences.push(aux[i].split(' '))
         }
 
+        //Debug
         console.info("Debug mode set to ", this.data.debug)
         if (this.data.debug) {
             console.log('Markers: ', this.markers)
@@ -65,6 +67,7 @@ AFRAME.registerComponent('mt-swipe', {
             var sequenceIndex = 0;
             this.sequences.forEach(function(sequence){
                 sequenceIndex++;
+                //Find first occurrence
                 var firstIndex = this.covered.findIndex(item => item.id == sequence[0])
                 var match = undefined;
                 var elemIndex = firstIndex;
@@ -81,6 +84,7 @@ AFRAME.registerComponent('mt-swipe', {
                         }
                     }
 
+                    //If match, send events
                     if(match == true ){
                         const event_swipe = new CustomEvent('event_swipe', {
                             detail: {

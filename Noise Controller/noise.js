@@ -5,6 +5,7 @@ AFRAME.registerComponent("mt-noise-controller", {
     },
 
     init: function () {
+        //Initialize data structures
         console.log("Initializing mt-noise-controller");
         this.visible = undefined;
         this.firstLoss = true;
@@ -12,11 +13,13 @@ AFRAME.registerComponent("mt-noise-controller", {
 
         //Event when the marker is found
         this.el.addEventListener("markerFound", function () {
+
             //Delete the last timeout created
             clearTimeout(this.timeout);
             this.visible = true;
             this.firstLoss = true;
 
+            //Debug
             if (this.data.debug) {
                 console.log("MARKER FOUND.");
                 console.log("Timeout clear.");

@@ -14,6 +14,7 @@ AFRAME.registerComponent('mt-shake-detector', {
   },
 
   update: function(){
+    //Initialize data structures
     this.actualDirection = new THREE.Vector3();
     this.lastDirection = new THREE.Vector3();
     this.lastPos =   new THREE.Vector3();
@@ -67,7 +68,7 @@ AFRAME.registerComponent('mt-shake-detector', {
         }
 
 
-
+        //If switch count is enough, send events
         if(this.switch.switchCount[elem] > this.data.minimumSwitchTimes) {
 
           const shake_event = new CustomEvent('event_shake', {
