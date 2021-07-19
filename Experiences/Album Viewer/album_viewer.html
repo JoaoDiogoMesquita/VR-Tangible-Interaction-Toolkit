@@ -25,27 +25,27 @@
 
         <a-sky src="space.jpg"></a-sky>
 
-        <a-marker id= "reference" preset='hiro' mt-swipe = "markers:#swipe1,#swipe2,#swipe3; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: true; debug: true;">
+        <a-marker id= "reference" preset='hiro' mt-swipe = "markers:#swipe1,#swipe2,#swipe3; sequences:1 2 3,3 2 1; maximumTime: 3000; hasReference: true; debug: false;">
             <a-image src="pink_floyd.png" height="2" width="2" position = "0 0 -2" rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker id="swipe1" type="barcode" value="3"  >
-            <a-image src="swipe.jpg"  rotation="-90 0 0"></a-image>
+            <a-image src="swipe.jpg" height="1.3" width="1.3"  rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker id="swipe2" type="barcode" value="4"  >
-            <a-image src="swipe.jpg"  rotation="-90 0 0"></a-image>
+            <a-image src="swipe.jpg" height="1.3" width="1.3"  rotation="-90 0 0"></a-image>
         </a-marker>
 
         <a-marker id="swipe3" type="barcode" value="5"  >
-            <a-image src="swipe.jpg"  rotation="-90 0 0"></a-image>
+            <a-image src="swipe.jpg" height="1" width="1"  rotation="-90 0 0"></a-image>
         </a-marker>
 
-        <a-marker id="play" type="barcode" value="1" mt-button="referenceMarker: #reference; minimumTime: 1000; debug: true;">
+        <a-marker id="play" type="barcode" value="1" mt-button="referenceMarker: #reference; minimumTime: 700; debug: false;">
             <a-image src="play.png"  rotation="-90 0 0"></a-image>
         </a-marker>
 
-        <a-marker id="pause" type="barcode" value="2" mt-button="referenceMarker: #reference; minimumTime: 1000; debug: true;">
+        <a-marker id="pause" type="barcode" value="2" mt-button="referenceMarker: #reference; minimumTime: 700; debug: false;">
             <a-image src="pause.png"  rotation="-90 0 0"></a-image>
         </a-marker>
 
